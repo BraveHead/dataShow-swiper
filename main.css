@@ -1,0 +1,99 @@
+*{margin: 0;padding: 0;}
+html{width: 100%;height: 100%;font-size: 100px;}
+body{width: 100%;height: 100%;}
+.swiper-container{width: 100%;height: 100%;font-size: 0.28px;}
+.move-logo{position: absolute;width: 0.45rem;height: 0.40rem;left: 3.52rem;bottom: 0.20rem;z-index: 3;}
+
+.move-up{
+    -webkit-animation: moveUp 1s infinite;
+    -moz-animation: moveUp 1s infinite;
+    -o-animation: moveUp 1s infinite;
+    animation: moveUp 1s infinite;
+}
+
+@keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.20rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.63rem;
+    }
+}
+@-moz-keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.20rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.63rem;
+    }
+}
+@-ms-keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.20rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.63rem;
+    }
+}
+@-o-keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.20rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.63rem;
+    }
+}
+@-webkit-keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.20rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.63rem;
+    }
+}
+
+.slide-1{background: url("public/img/index-bg.jpg") no-repeat center;background-size: 100% 100%;}
+.move-yun{position: absolute;width:100%;height: 100%;z-index: 1}
+
+.yun-float{
+    animation: yunFloat 6s ease infinite;
+    animation-direction:alternate;
+}
+
+@keyframes yunFloat {
+    0%{
+        left: 0;
+    }
+    40%{
+        left: 0.90rem;
+    }
+    70%{
+        left: 0;
+    }
+    100%{
+        left: -0.80rem;
+    }
+}
+
+.index-content{position: absolute;width: 100%;height:100%;z-index: 2;}
+.slide-2{background: url("public/img/2.jpg") no-repeat center;background-size: 100% 100%;}
+.slide-3{background: url("public/img/3.jpg") no-repeat center;background-size: 100% 100%;}
+.slide-4{background: url("public/img/4.jpg") no-repeat center;background-size: 100% 100%;}
+.slide-5{background: url("public/img/5.jpg") no-repeat center;background-size: 100% 100%;}
+.slide-6{background: url("public/img/6.jpg") no-repeat center;background-size: 100% 100%;}
+.slide-7{background: url("public/img/7.jpg") no-repeat center;background-size: 100% 100%;}
+.slide-8{background: url("public/img/8.jpg") no-repeat center;background-size: 100% 100%;}
+.slide-9{background: url("public/img/9.jpg") no-repeat center;background-size: 100% 100%;}
+.slide-10{background: url("public/img/10.jpg") no-repeat center;background-size: 100% 100%;}
+.slide-11{background: url("public/img/11.jpg") no-repeat center;background-size: 100% 100%;}
+.move-top{display: block;position: absolute;width: 0.90rem;height: 0.90rem;left: 3.30rem;bottom: 0.85rem;z-index: 4;}

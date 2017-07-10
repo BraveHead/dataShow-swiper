@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>数据披露</title>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide-1">
+            <!--<img src="img/index-move-yun.png" class="move-yun yun-float"/>-->
+            <img src="img/top.png" class="top-yun top-yun-move"/>
+            <img src="img/right.png" class="right-yun right-yun-move"/>
+            <img src="img/left.png" class="left-yun left-yun-move"/>
+            <img src="img/index-content.png" class="index-content"/>
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-2">
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-3">
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-4">
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-5">
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-6">
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-7">
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-8">
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-9">
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-10">
+            <img src="img/mov-logo.png" class="move-logo move-up">
+        </div>
+        <div class="swiper-slide slide-11">
+            <a href="#" class="move-top"></a>
+        </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+</div>
+<script src="js/autoSetRem.js"></script>
+<script src="js/swiper-3.4.2.min.js"></script>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'vertical',
+        // 如果需要分页器
+        pagination: '.swiper-pagination'
+    });
+    var DocHeight = document.body.clientHeight;
+    var swiperContainer = document.getElementsByClassName("swiper-container")[0];
+    swiperContainer.style.height = DocHeight;
+    var moveTop = document.getElementsByClassName('move-top')[0];
+    moveTop.addEventListener('click',function () {
+        mySwiper.slideTo(0, 1000, false);
+    });
+</script>
+</body>
+</html>
