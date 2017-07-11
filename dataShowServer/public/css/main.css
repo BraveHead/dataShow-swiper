@@ -89,32 +89,34 @@ body{width: 100%;height: 100%;}
 }*/
 .top-yun{position: absolute;top: 0.80rem;left: 1.45rem;width: 0.86rem;height: 0.57rem;}
 .top-yun-move{
-    animation: topYunMove 12s infinite;
+    animation: topYunMove 11s infinite;
 }
 @keyframes topYunMove {
-    0%{left: 1.45rem;}
-    25%{left: 2.00rem}
-    50%{left: 1.45rem}
-    75%{left: 0.90rem}
-    100%{left: 1.45rem}
+    0%{left: 1.15rem;}
+    25%{left: 1.70rem}
+    50%{left: 1.15rem}
+    75%{left: 0.60rem}
+    100%{left: 1.15rem}
 }
-.right-yun{position: absolute;top: 2.00rem;right: 0;width: 0.90rem;height: 0.64rem;}
+.right-yun{position: absolute;top: 1.85rem;right: 0;width: 0.90rem;height: 0.64rem;}
 .right-yun-move{
-    animation: rightYunMove 12s infinite;
+    animation: rightYunMove 3s infinite;
+    animation-direction: alternate;
 }
 @keyframes rightYunMove {
     0%{right: 0}
-    100%{right: 100%}
+    100%{right: 15%}
 }
 
-.left-yun{position: absolute;top: 2.35rem;left: -0.18rem;width: 0.68rem;height: 0.47rem}
+.left-yun{position: absolute;top: 2.20rem;left: -0.18rem;width: 0.68rem;height: 0.47rem}
 .left-yun-move{
-    animation: leftYunMove 12s infinite;
+    animation: leftYunMove 3s infinite;
+    animation-direction: alternate;
 }
 
 @keyframes leftYunMove {
     0%{left: -0.18rem;}
-    100%{left: 100%}
+    100%{left: 15%}
 }
 .index-content{position: absolute;width: 100%;height:100%;z-index: 2;}
 .slide-2{background: url("../img/2.jpg") no-repeat center;background-size: 100% 100%;}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pc数据披露</title>
+    <style>
+        *{margin: 0;padding: 0}
+        body{
+            position: relative;
+            font-size: 16px;
+        }
+        img{
+            width: 100%;
+        }
+        .same{
+            position: absolute;
+            width: 19.688%;
+            height: 2.7312%;
+            z-index: 2;
+        }
+        .same>div{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .pic1{
+            top: 62.702%;
+            left: 28.593%;
+        }
+        .pic2{
+            top: 62.702%;
+            left: 51.77%;
+        }
+        .pic3{
+            top: 66.20%;
+            left: 28.593%;
+        }
+        .pic4{
+            top: 66.20%;
+            left: 51.77%;
+        }
+        .show-data{
+            position: absolute;
+            width: 100%;
+            height: 48%;
+            top: 100%;
+            background-color: rgba(0,0,0,0.5);
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<img src="index.jpg"/>
+<div class="same pic1" style="height: 2.773%">
+    <div class="hover">
+        <a class="show-data">5.1累计投资冷啊巨额奖励</a>
+    </div>
+</div>
+<div class="same pic2">
+    <div class="hover">
+        <a class="show-data">投出你所爱，奖励5000块</a>
+    </div>
+</div>
+<div class="same pic3">
+    <div class="hover">
+        <a class="show-data">新手专享1690元投资福利</a>
+    </div>
+</div>
+<div class="same pic4">
+    <div class="hover">
+        <a class="show-data">积分换iPhone,好礼送不停</a>
+    </div>
+</div>
+<script src="jquery-1.10.1.min.js"></script>
+<script>
+    var showData = $('.show-data');
+    showData.css('line-height', showData.eq(0).height()+"px");
+    var index ;
+    $(".hover").hover(function () {
+        index = $(".hover").index(this);
+        showData.eq(index).animate({"top":"52%"}, 300);
+    },function (e) {
+        showData.eq(index).animate({"top":'100%'}, 300);
+    })
+</script>
+</body>
+</html>
