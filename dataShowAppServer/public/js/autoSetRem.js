@@ -7,14 +7,16 @@ var autoSetRem = (function(doc, win) {
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
         set = function(paper) {
             if(paper==null){
-                paper=750;
+                paper=375;
             }
             var clientWidth = docEl.clientWidth || win.innerWidth || screen.width;
-            if(clientWidth<=640){
-                clientWidth = 640;
+            if(clientWidth<=320){
+                clientWidth = 320;
             }
+            console.log(clientWidth);
             if (!clientWidth) return;
             docEl.style.fontSize = 100 * (clientWidth / paper) + 'px';
+            console.log(100 * (clientWidth / paper) + 'px');
             done = true;
             return done;
         };
@@ -27,4 +29,4 @@ var autoSetRem = (function(doc, win) {
     doc.addEventListener('DOMContentLoaded', set, false);
 })(document, window);
 
-autoSetRem.set(750);
+autoSetRem.set(375);

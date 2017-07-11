@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>app的数据披露页面</title>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css"/>
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+</head>
+<body>
+<div style="width: 100%;height: 0.64rem;background-color: #4DBBFE"></div>
+<div class="content">
+    <p class="data-title">数据披露</p>
+    <div class="data-time">以上数据截止至<span>2017-07-10 10:18:21</span></div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="margin-right: 0.20rem;">1</div>
+            <div class="swiper-slide">2</div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<script src="js/autoSetRem.js"></script>
+<script src="js/swiper-3.4.2.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflow: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1
+        }
+    });
+</script>
+</body>
+</html>
