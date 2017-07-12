@@ -33,7 +33,7 @@ body{
     letter-spacing: 0.0014rem;
 }
 .data-time>span{
-    font-weight: 600;
+    font-weight: 100;
 }
 .swiper-container{
     width: 100%;
@@ -112,12 +112,19 @@ body{
     font-size: 0.12rem;
     color: #ADADAD;
 }
+.a-content>p>span{
+    font-weight: 100;
+}
 .a-content>p:nth-child(1){
     padding-top: 0.10rem;
 }
 .a-content h3{
+    display: block;
+    height: 0.42rem;
     font-size: 0.30rem;
     color: #379DF3;
+    line-height: 0.42rem;
+    font-weight: 400;
 }
 .b-content{
     width: 2.44rem;
@@ -126,4 +133,34 @@ body{
     height: 2.36rem;
     background: url("../img/shuju_bg_a@2x.png") no-repeat center;
     background-size: 100% 100%;
+}
+.data-center{
+    width: 2.44rem;
+    height: 2.36rem;
+}
+.data-center>li{
+    text-align: left;
+    font-size: 0.12rem;
+    display: block;
+    float: left;
+    width: 50%;
+    height: 0.88rem;
+}
+.data-center>li>p:nth-child(1){
+     font-size: 0.18rem;
+     color: #2DAFFF;
+     padding-top: 0.20rem;
+     font-weight: 300;
+ }
+.data-center>li>p:nth-child(2){
+    font-size: 0.12rem;
+    color: #494949;
+    font-weight: 500;
+    padding-top: 0.05rem;
+}
+.data-center>li>p:nth-child(3){
+    font-size: 0.12rem;
+    color: #adadad;
+    font-weight: 300;
+    padding-top: 0.05rem;
 }

@@ -8,37 +8,88 @@
     <link rel="stylesheet" href="css/main.css" type="text/css"/>
 </head>
 <body>
-<div style="width: 100%;height: 0.64rem;background-color: #4DBBFE"></div>
-<div class="content">
+<div style="width: 100%;height: 0.44rem;background-color: #4DBBFE"></div>
+<div class="content" id="app">
     <p class="data-title">数据披露</p>
     <div class="data-time">以上数据截止至<span>2017-07-10 10:18:21</span></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="margin-right: 0.20rem;">
-                <div class="a-content">
-                    <p>累计成交金额</p>
-                    <h3>112,222,334.00</h3>
-                    <p>累计成交<span>4,343,43</span>笔</p>
+    <template v-text="msg">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="margin-right: 0.20rem;">
+                    <div class="a-content">
+                        <p>累计成交金额</p>
+                        <h3>{{data.totalAmounts | filterFun}}</h3>
+                        <p>累计成交<span>{{data.totalOdds}}</span>笔</p>
+                    </div>
+                    <div class="b-content">
+                        <ul class="data-center">
+                            <li>
+                                <p>{{data.today | filterFun}}</p>
+                                <p>今日成交(万元)</p>
+                                <p>成交{{data.totalOdds}}笔</p>
+                            </li>
+                            <li>
+                                <p>{{data.month | filterFun}}</p>
+                                <p>本月成交(万元)</p>
+                                <p>成交12231笔</p>
+                            </li>
+                            <li>
+                                <p>{{data.yesterday}}</p>
+                                <p>昨日成交(万元)</p>
+                                <p>成交231笔</p>
+                            </li>
+                            <li>
+                                <p>1,636.98</p>
+                                <p>上月成交(万元)</p>
+                                <p>成交12231笔</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="b-content">
-
+                <div class="swiper-slide">
+                    <div class="a-content">
+                        <p>为用户带来总收益</p>
+                        <h3>{{data.interest | filterFun}}</h3>
+                        <p>累计成交<span>{{data.totalOdds}}</span>笔</p>
+                    </div>
+                    <div class="b-content">
+                        <ul class="data-center">
+                            <li>
+                                <p>{{data.totalProjects}}</p>
+                                <p>已发布借款项目(个)</p>
+                            </li>
+                            <li>
+                                <p>{{data.todayLoanAccount | filterFun}}</p>
+                                <p>今日放款金额(万元)</p>
+                            </li>
+                            <li>
+                                <p>{{data.shop}}</p>
+                                <p>线下资产端门店(个)</p>
+                            </li>
+                            <li>
+                                <p>{{data.borrower}}</p>
+                                <p>累计借款人(个)</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="swiper-slide">2</div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
         </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
-    </div>
+    </template>
     <div class="count-save">
         <a></a>
         <span>账户资金安全由上海银行存管系统保障</span>
         <a></a>
     </div>
 </div>
-<script src="js/autoSetRem.js"></script>
-<script src="js/swiper-3.4.2.min.js"></script>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="js/swiper-3.4.2.jquery.min.js"></script>
+<script src="js/main.js"></script>
 <script>
-    var swiper = new Swiper('.swiper-container', {
+    /*var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         effect: 'coverflow',
         grabCursor: true,
@@ -49,8 +100,28 @@
             stretch: 0,
             depth: 100,
             modifier: 1
+        },
+        onSlideNextEnd: function(swiper){
+          /!*  function toThousands(num) {
+                return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,') + '.00';
+            }
+
+            var id1 = setTimeout(function () {
+                var time = 0;
+                var id2 = setInterval(function () {
+                    time += 40;
+                    var num = (Math.random().toFixed(8)*1000000).toFixed(2);
+                    self.data.totalAmounts = num;
+                    if(time>= 2000){
+                        clearInterval(id2);
+                        self.data.totalAmounts = endNumber;
+                    }
+                }, 10);
+
+            }, 200);
+*!/
         }
-    });
+    });*/
 </script>
 </body>
 </html>
