@@ -5,7 +5,7 @@ body{
     height: 100%;
     text-align: center;
     font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     overflow: hidden;
 }
 .content{
@@ -32,9 +32,9 @@ body{
     font-size: 0.12rem;
     letter-spacing: 0.0014rem;
 }
-.data-time>span{
-    font-weight: 100;
-}
+/*.data-time>span{*/
+    /*font-weight: 100;*/
+/*}*/
 .swiper-container{
     width: 100%;
     padding-top: 0.30rem;
@@ -112,9 +112,9 @@ body{
     font-size: 0.12rem;
     color: #ADADAD;
 }
-.a-content>p>span{
-    font-weight: 100;
-}
+/*.a-content>p>span{*/
+    /*font-weight: 100;*/
+/*}*/
 .a-content>p:nth-child(1){
     padding-top: 0.10rem;
 }
@@ -132,7 +132,7 @@ body{
     margin-right: auto;
     height: 2.36rem;
     background: url("../img/shuju_bg_a@2x.png") no-repeat center;
-    background-size: 100% 100%;
+    background-size: 2.44rem 1.91rem;
 }
 .data-center{
     width: 2.44rem;

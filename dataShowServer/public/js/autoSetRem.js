@@ -10,8 +10,8 @@ var autoSetRem = (function(doc, win) {
                 paper=750;
             }
             var clientWidth = docEl.clientWidth || win.innerWidth || screen.width;
-            if(clientWidth<=640){
-                clientWidth = 640;
+            if(clientWidth<=320){
+                clientWidth = 320;
             }
             if (!clientWidth) return;
             docEl.style.fontSize = 100 * (clientWidth / paper) + 'px';
