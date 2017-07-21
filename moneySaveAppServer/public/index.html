@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>银行存管app页面</title>
+    <link rel="stylesheet" href="swiper-3.4.2.min.css"/>
     <style>
         *{
             margin: 0;
             padding: 0;
+        }
+        html{
+            font-size: 100px;
         }
         .little-pic{
             position: absolute;
@@ -19,10 +23,68 @@
             z-index: 2;
             width: 100%;
         }
+        .footer-container{
+            position: absolute;
+            top: 36.12rem;
+            width: 100%;
+            height: 3.06rem;
+            z-index: 10;
+        }
+        .swiper-container{
+            width: 5.05rem;
+            height: 3.06rem;
+            margin: 0 auto;
+            background-color: yellow;
+            border-radius: 0.10rem;
+        }
+        .swiper-wrapper{
+            width: 5.05rem;
+            height: 3.06rem;
+        }
+        .swiper-button-prev{
+            position: absolute;
+            width: 0.45rem;
+            height: 0.45rem;
+            left: 0.40rem;
+            top: 1.72rem;
+            background: #ffffff;
+            opacity: 0;
+        }
+        .swiper-button-next{
+            position: absolute;
+            width: 0.45rem;
+            height: 0.45rem;
+            left: 6.65rem;
+            top: 1.72rem;
+            background: #ffffff;
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
 <img src="little-pic.jpg" class="little-pic"/>
 <img src="moneySaveApp.jpg" class="money-save-bg"/>
+<div class="footer-container">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+        </div>
+    </div>
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+<script src="autoSetRem.js"></script>
+<script src="swiper-3.4.2.min.js"></script>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true,
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+    })
+</script>
 </body>
 </html>

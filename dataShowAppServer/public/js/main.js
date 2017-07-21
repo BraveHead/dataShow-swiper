@@ -1,12 +1,6 @@
 /**
  * Created by Yy on 2017/7/12.
  */
-
-
-    //数字格式化
-    function toThousands(num) {
-        return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,') + '.00';
-    }
     var autoSetRem = (function(doc, win) {
         var docEl = doc.documentElement,
             done = false,
@@ -19,10 +13,8 @@
                 if(clientWidth<=320){
                     clientWidth = 320;
                 }
-                console.log(clientWidth);
                 if (!clientWidth) return;
                 docEl.style.fontSize = 100 * (clientWidth / paper) + 'px';
-                console.log(100 * (clientWidth / paper) + 'px');
                 done = true;
                 return done;
             };
@@ -45,7 +37,6 @@
         },
         mounted: function () {
             var self = this;
-
             $.ajax({
                 url: 'https://test.qtz360.com/api/rest/summary',
                 method: 'GET',
@@ -164,7 +155,7 @@
                 var item = new Date();
                 var y = item.getFullYear(),
                     m = item.getMonth() + 1,
-                    d = item.getDay(),
+                    d = item.getDate(),
                     h = item.getHours(),
                     mit = item.getMinutes(),
                     sec = item.getSeconds();
