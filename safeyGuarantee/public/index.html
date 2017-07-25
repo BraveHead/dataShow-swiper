@@ -21,22 +21,23 @@
             height: 100%;
         }
         body {
-            background: #000000;
+            background: rgba(0,0,0,0.1);
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 100px;
             color:#000;
             margin: 0;
             padding: 0;
+            height: 100%;
             overflow: hidden;
         }
         .swiper-container {
             width: 7.50rem;
-            height: 13.31rem;
+            height: 12.03rem;
             position: absolute;
         }
         .swiper-slide {
             width: 7.5rem;
-            height: 13.31rem;
+            height: 12.03rem;
             background-position: center;
             background-size: cover;
         }
@@ -46,17 +47,17 @@
 <!-- Swiper -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image:url(./assests/1.1.png);background-size: 7.5rem 13.31rem">
+        <div class="swiper-slide" style="background-image:url(./assests/1.1.png);background-size: 7.5rem 12.03rem">
 
         </div>
-        <div class="swiper-slide" style="background-image:url(./assests/2.1.png);background-size: 7.5rem 13.31rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/3.1.png);background-size: 7.5rem 13.31rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/4.1.png);background-size: 7.5rem 13.31rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/5.1.png);background-size: 7.5rem 13.31rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/6.1.png);background-size: 7.5rem 13.31rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/7.1.png);background-size: 7.5rem 13.31rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/8.1.png);background-size: 7.5rem 13.31rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/9.1.png);background-size: 7.5rem 13.31rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/2.1.png);background-size: 7.5rem 12.03rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/3.1.png);background-size: 7.5rem 12.03rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/4.1.png);background-size: 7.5rem 12.03rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/5.1.png);background-size: 7.5rem 12.03rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/6.1.png);background-size: 7.5rem 12.03rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/7.1.png);background-size: 7.5rem 12.03rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/8.1.png);background-size: 7.5rem 12.03rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/9.1.png);background-size: 7.5rem 12.03rem"></div>
     </div>
     <!--&lt;!&ndash; Add Pagination &ndash;&gt;-->
     <!--<div class="swiper-pagination"></div>-->
@@ -87,13 +88,34 @@
 //            console.log('>>');
 //        }
         onSlideChangeStart: function (swiper) {
-
-        }
+//            renderShadow(mySwiper.activeIndex);
+            console.log(this.slides);
+        },
     });
 //    $('.swiper-wrapper, .swiper-slide').css({
 //        width: '7.5rem',
 //        height: '13.31rem'
 //    });
+window.onload = function () {
+    function renderShadow(index) {
+        var num = 0.3;
+        var id = setInterval(function () {
+            var rotate = document.querySelector('.swiper-wrapper').style.transform;
+            var str1 = rotate.slice(rotate.indexOf('rotateX(')+8);
+            var ang = str1.slice(0, str1.indexOf('deg)'));
+            var present = (ang%90/90).toFixed(4);
+            num += present;
+            if(num >= 1){
+                num = 1;
+                clearInterval(id);
+            }
+            mySwiper.slides[index].style.opacity = num;
+        },10)
+
+    }
+
+}
+
 
 
 </script>
