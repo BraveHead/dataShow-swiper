@@ -28,22 +28,22 @@
                         <ul class="data-center">
                             <li>
                                 <p>{{data.today | filterFun}}</p>
-                                <p>今日成交(万元)</p>
+                                <p>今日成交(元)</p>
                                 <p>成交{{data.todayTrading}}笔</p>
                             </li>
                             <li>
                                 <p>{{data.month | filterFun}}</p>
-                                <p>本月成交(万元)</p>
+                                <p>本月成交(元)</p>
                                 <p>成交{{data.monthTrading}}笔</p>
                             </li>
                             <li>
                                 <p>{{data.yesterday | filterFun}}</p>
-                                <p>昨日成交(万元)</p>
+                                <p>昨日成交(元)</p>
                                 <p>成交{{data.yesterdayTrading}}笔</p>
                             </li>
                             <li>
                                 <p>{{data.upMonth | filterFun}}</p>
-                                <p>上月成交(万元)</p>
+                                <p>上月成交(元)</p>
                                 <p>成交{{data.upMonthTrading}}笔</p>
                             </li>
                         </ul>
@@ -52,7 +52,7 @@
                 <div class="swiper-slide">
                     <div class="a-content">
                         <p>为用户带来总收益</p>
-                        <h3>{{data.interest | filterNOToFixed}}</h3>
+                        <h3>{{data.interest | filterFun}}</h3>
                         <p>累计成交<span>{{data.totalOdds}}</span>笔</p>
                     </div>
                     <div class="b-content">
@@ -63,7 +63,7 @@
                             </li>
                             <li>
                                 <p>{{data.todayLoanAccount | filterFun}}</p>
-                                <p>今日放款金额(万元)</p>
+                                <p>今日放款金额(元)</p>
                             </li>
                             <li>
                                 <p>{{data.shop}}</p>

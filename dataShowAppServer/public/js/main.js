@@ -38,7 +38,7 @@
         mounted: function () {
             var self = this;
             $.ajax({
-                url: 'https://test.qtz360.com/api/rest/summary',
+                url: 'https://www.qtz360.com/api2.3/rest/summary',
                 method: 'GET',
                 dataType: 'json'
             }).then(function (res) {
@@ -53,7 +53,7 @@
                         totalProjects = res.data.totalProjects,  //已发布的借款项目数量
                         todayLoanAccount = res.data.todayLoanAccount,  //今日放款金额
                         shop = res.data.shop,   //门店数量
-                        borrower = res.data.borrower;   //累计借款人
+                        borrower = res.data.totalProjects;   //累计借款人
 
                     var time, num, id2;
                     setTimeout(function () {
@@ -149,7 +149,7 @@
                 return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,') + '.00';
             },
             filterNOToFixed: function (num) {
-                return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+                return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')+ '.00';
             },
             filterTime: function () {
                 var item = new Date();
@@ -165,7 +165,7 @@
                     }
                     return num;
                 }
-                return addZero(y)+ '-' + addZero(m) + '-' + addZero(d)  + ' ' + addZero(h) +'-' + addZero(mit) + '-' + addZero(sec);
+                return addZero(y)+ '-' + addZero(m) + '-' + addZero(d)  + ' ' + addZero(h) +':' + addZero(mit) + ':' + addZero(sec);
             }
         }
     })

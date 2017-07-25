@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <!--ios适配meta-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./style/swiper-3.4.2.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        body {
+            background: #000000;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 100px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .swiper-container {
+            width: 7.50rem;
+            height: 13.31rem;
+            position: absolute;
+        }
+        .swiper-slide {
+            width: 7.5rem;
+            height: 13.31rem;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url(./assests/1.1.png);background-size: 7.5rem 13.31rem">
+
+        </div>
+        <div class="swiper-slide" style="background-image:url(./assests/2.1.png);background-size: 7.5rem 13.31rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/3.1.png);background-size: 7.5rem 13.31rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/4.1.png);background-size: 7.5rem 13.31rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/5.1.png);background-size: 7.5rem 13.31rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/6.1.png);background-size: 7.5rem 13.31rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/7.1.png);background-size: 7.5rem 13.31rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/8.1.png);background-size: 7.5rem 13.31rem"></div>
+        <div class="swiper-slide" style="background-image:url(./assests/9.1.png);background-size: 7.5rem 13.31rem"></div>
+    </div>
+    <!--&lt;!&ndash; Add Pagination &ndash;&gt;-->
+    <!--<div class="swiper-pagination"></div>-->
+</div>
+
+<!-- Swiper JS -->
+<script src="./js/autoSetRem.js"></script>
+<script src="./js/jquery-1.10.1.min.js"></script>
+<script src="./js/swiper.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+//        pagination: '.swiper-pagination',
+        effect: 'cube',
+//        grabCursor: true,
+        cube: {
+            shadow: true,
+            slideShadows: false,
+            shadowOffset: 10,
+            shadowScale: 0.94
+        },
+//        onSlideChangeStart: function (swiper) {
+//            console.log(swiper.activeIndex);
+//        },
+//        onSlideMove: function (swiper, event) {
+//            console.log('>>');
+//        }
+        onSlideChangeStart: function (swiper) {
+
+        }
+    });
+//    $('.swiper-wrapper, .swiper-slide').css({
+//        width: '7.5rem',
+//        height: '13.31rem'
+//    });
+
+
+</script>
+</body>
+</html>
