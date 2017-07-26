@@ -1,0 +1,260 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    background: rgba(0,0,0,0.1);
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 100px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+.swiper-container{
+    width: 7.50rem;
+    height: 12.03rem;
+    position: absolute;
+    top: -0.20rem;
+}
+.swiper-slide {
+    width: 7.5rem;
+    height: 12.03rem;
+    background-position: center;
+    background-size: cover;
+}
+.move-logo{position: absolute;width: 0.45rem;height: 0.40rem;left: 3.52rem;bottom: 0.40rem;z-index: 3;}
+
+.move-up{
+    -webkit-animation: moveUp 1s infinite;
+    -moz-animation: moveUp 1s infinite;
+    -o-animation: moveUp 1s infinite;
+    animation: moveUp 1s infinite;
+}
+
+@keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.40rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.68rem;
+    }
+}
+@-moz-keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.40rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.68rem;
+    }
+}
+@-ms-keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.40rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.68rem;
+    }
+}
+@-o-keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.40rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.68rem;
+    }
+}
+@-webkit-keyframes moveUp {
+    0%{
+        opacity: 1;
+        bottom: 0.40rem;
+    }
+    100%{
+        opacity: 0.5;
+        bottom: 0.68rem;
+    }
+}
+.page1{
+    display: block;
+    width: 6.65rem;
+    height: 7.21rem;
+    position: relative;
+    top: 3.50rem;
+    margin: 0 auto;
+    background: url('./../assests/2.2.png') no-repeat center;
+    background-size: 6.65rem 7.21rem;
+}
+.page1-top{
+    width: 6.08rem;
+    height: 3.11rem;
+    position: absolute;
+    top:0.75rem;
+    left: 0.24rem;
+}
+.page1-bot{
+    position: absolute;
+    bottom: 1.05rem;
+    width: 5.22rem;
+    height: 0.90rem;
+    left: 0.57rem;
+}
+.page2-top{
+    width: 4.68rem;
+    height: 2.50rem;
+    position: absolute;
+    top: 0.40rem;
+    left: 0.90rem;
+}
+.page2-bot{
+    width: 4.73rem;
+    height: 3.17rem;
+    position: absolute;
+    left: 0.90rem;
+    bottom: 0.90rem;
+}
+.page3-dif1{
+    width: 5.01rem;
+    height: 0.82rem;
+    position: absolute;
+    left: 1.20rem;
+    top: 4.14rem;
+}
+.page3-dif2{
+    width: 3.78rem;
+    height: 0.82rem;
+    position: absolute;
+    left: 1.20rem;
+    top: 6.0rem;
+}
+.page3-dif3{
+    width: 4.26rem;
+    height: 0.73rem;
+    position: absolute;
+    left: 1.20rem;
+    top: 7.86rem;
+}
+.page3-dif4{
+    width: 3.78rem;
+    height: 0.72rem;
+    position: absolute;
+    left: 1.20rem;
+    top: 9.56rem;
+}
+.page4-dif1{
+    width: 4.03rem;
+    height: 0.75rem;
+}
+.page4-dif2{
+    width: 3.83rem;
+    height: 0.69rem;
+}
+.page4-dif3{
+    width: 3.33rem;
+    height: 0.73rem;
+}
+.page4-dif4{
+    width: 4.25rem;
+    height: 0.67rem;
+}
+.page5-dif1{
+    width: 3.26rem;
+    height: 0.67rem;
+}
+.page5-dif2{
+    width: 4.00rem;
+    height: 0.72rem;
+}
+.page5-dif3{
+    width: 4.39rem;
+    height: 0.69rem;
+}
+.page5-dif4{
+    width: 3.76rem;
+    height: 0.80rem;
+}
+.page7-content{
+    width: 4.57rem;
+    height: 7.80rem;
+    position: absolute;
+    top: 2.70rem;
+    left: 1.44rem;
+}
+.page6-dif1{
+    position: absolute;
+    top: 3.30rem;
+    left: 1.60rem;
+    width: 3.85rem;
+    height: 0.67rem;
+}
+.page6-dif2{
+    position: absolute;
+    top: 5.04rem;
+    left: 1.60rem;
+    width: 3.79rem;
+    height: 0.99rem;
+}
+.page6-dif3{
+    position: absolute;
+    top: 6.83rem;
+    left: 1.60rem;
+    width: 3.86rem;
+    height: 1.31rem;
+}
+.page6-dif4{
+    position: absolute;
+    top: 8.87rem;
+    left: 1.60rem;
+    width: 3.81rem;
+    height: 0.99rem;
+}
+.page8-content{
+    width: 4.59rem;
+    height: 8.46rem;
+    position: absolute;
+    top: 2.65rem;
+    left: 1.44rem;
+}
+.page7-dif1{
+    position: absolute;
+    top:2.54rem;
+    left: 1.77rem;
+    width: 3.31rem;
+    height: 1.54rem;
+}
+.page7-dif2{
+    position: absolute;
+    top:4.75rem;
+    left: 1.77rem;
+    width: 3.77rem;
+    height: 0.88rem;
+}
+.page7-dif3{
+    position: absolute;
+    top:6.71rem;
+    left: 1.77rem;
+    width: 3.77rem;
+    height: 0.61rem;
+}
+.page7-dif4{
+    position: absolute;
+    top: 8.32rem;
+    left: 1.77rem;
+    width: 3.77rem;
+    height: 0.88rem;
+}
+.page7-dif5{
+    position: absolute;
+    top:10.16rem;
+    left: 1.77rem;
+    width: 3.36rem;
+    height: 0.60rem;
+}

@@ -9,54 +9,72 @@
     <meta content="yes" name="apple-touch-fullscreen">
     <meta content="telephone=no,email=no" name="format-detection">
     <title>Swiper demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="./style/swiper-3.4.2.min.css">
-
+    <link rel="stylesheet" href="./style/animate.css"/>
+    <link rel="stylesheet" href="./style/main.css"/>
     <!-- Demo styles -->
-    <style>
-        html, body {
-            position: relative;
-            height: 100%;
-        }
-        body {
-            background: rgba(0,0,0,0.1);
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-size: 100px;
-            color:#000;
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-        .swiper-container {
-            width: 7.50rem;
-            height: 12.03rem;
-            position: absolute;
-        }
-        .swiper-slide {
-            width: 7.5rem;
-            height: 12.03rem;
-            background-position: center;
-            background-size: cover;
-        }
-    </style>
 </head>
 <body>
 <!-- Swiper -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image:url(./assests/1.1.png);background-size: 7.5rem 12.03rem">
-
+        <div class="swiper-slide">
+            <img src="./assests/1.1.png" style="width: 7.5rem; height:12.03rem"/>
+            <img src="assests/mov-logo.png" class="move-logo move-up"/>
         </div>
-        <div class="swiper-slide" style="background-image:url(./assests/2.1.png);background-size: 7.5rem 12.03rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/3.1.png);background-size: 7.5rem 12.03rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/4.1.png);background-size: 7.5rem 12.03rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/5.1.png);background-size: 7.5rem 12.03rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/6.1.png);background-size: 7.5rem 12.03rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/7.1.png);background-size: 7.5rem 12.03rem"></div>
-        <div class="swiper-slide" style="background-image:url(./assests/8.1.png);background-size: 7.5rem 12.03rem"></div>
+        <div class="swiper-slide" style="background:url(./assests/2.1.png) no-repeat center;background-size: 7.5rem 12.03rem">
+            <a class="page1">
+                <img src="assests/2.3.png" class="page1-top ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"/>
+                <img src="assests/2.4.png" class="page1-bot ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"/>
+            </a>
+            <img src="assests/mov-logo.png" class="move-logo move-up"/>
+        </div>
+        <div class="swiper-slide" style="background-image:url(./assests/3.1.png);background-size: 7.5rem 12.03rem">
+            <a class="page1">
+                <img src="assests/3.2.png" class="page2-top ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"/>
+                <img src="assests/3.3.png" class="page2-bot ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"/>
+            </a>
+            <img src="assests/mov-logo.png" class="move-logo move-up"/>
+        </div>
+        <div class="swiper-slide" style="background-image:url(./assests/4.1.png);background-size: 7.5rem 12.03rem">
+            <img src="assests/4.2.png" class="page3-dif1 ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="0.2s"/>
+            <img src="assests/4.3.png" class="page3-dif2 ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="0.9s"/>
+            <img src="assests/4.4.png" class="page3-dif3 ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="1.8s"/>
+            <img src="assests/4.5.png" class="page3-dif4 ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="2.7s"/>
+            <img src="assests/mov-logo.png" class="move-logo move-up"/>
+        </div>
+        <div class="swiper-slide" style="background-image:url(./assests/5.1.png);background-size: 7.5rem 12.03rem">
+            <img src="assests/5.2.png" class="page3-dif1 ani page4-dif1" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="0.2s"/>
+            <img src="assests/5.3.png" class="page3-dif2 ani page4-dif2" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="0.9s"/>
+            <img src="assests/5.4.png" class="page3-dif3 ani page4-dif3" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="1.8s"/>
+            <img src="assests/5.5.png" class="page3-dif4 ani page4-dif4" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="2.7s"/>
+            <img src="assests/mov-logo.png" class="move-logo move-up"/>
+        </div>
+        <div class="swiper-slide" style="background-image:url(./assests/6.1.png);background-size: 7.5rem 12.03rem">
+            <img src="assests/6.2.png" class="page3-dif1 ani page5-dif1" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="0.2s"/>
+            <img src="assests/6.3.png" class="page3-dif2 ani page5-dif2" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="0.9s"/>
+            <img src="assests/6.4.png" class="page3-dif3 ani page5-dif3" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="1.8s"/>
+            <img src="assests/6.5.png" class="page3-dif4 ani page5-dif4" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="2.7s"/>
+            <img src="assests/mov-logo.png" class="move-logo move-up"/>
+        </div>
+        <div class="swiper-slide" style="background-image:url(./assests/7.1.png);background-size: 7.5rem 12.03rem">
+            <img src="assests/7.2.png" class="page7-content"/>
+            <img src="assests/7.3.png" class="ani page6-dif1" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="0.2s"/>
+            <img src="assests/7.4.png" class="ani page6-dif2" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="0.9s"/>
+            <img src="assests/7.5.png" class="ani page6-dif3" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="1.8s"/>
+            <img src="assests/7.6.png" class="ani page6-dif4" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="2.7s"/>
+            <img src="assests/mov-logo.png" class="move-logo move-up"/>
+        </div>
+        <div class="swiper-slide" style="background-image:url(./assests/8.1.png);background-size: 7.5rem 12.03rem">
+            <img src="assests/8.2.png" class="page8-content"/>
+            <img src="assests/8.3.png" class="ani page7-dif1" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="0.2s"/>
+            <img src="assests/8.4.png" class="ani page7-dif2" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="0.9s"/>
+            <img src="assests/8.5.png" class="ani page7-dif3" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.7s" swiper-animate-delay="1.8s"/>
+            <img src="assests/8.6.png" class="ani page7-dif4" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="2.7s"/>
+            <img src="assests/8.7.png" class="ani page7-dif5" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="3.6s"/>
+            <img src="assests/mov-logo.png" class="move-logo move-up"/>
+        </div>
         <div class="swiper-slide" style="background-image:url(./assests/9.1.png);background-size: 7.5rem 12.03rem"></div>
     </div>
     <!--&lt;!&ndash; Add Pagination &ndash;&gt;-->
@@ -66,10 +84,12 @@
 <!-- Swiper JS -->
 <script src="./js/autoSetRem.js"></script>
 <script src="./js/jquery-1.10.1.min.js"></script>
-<script src="./js/swiper.js"></script>
+<script src="./js/swiper-3.4.2.jquery.min.js"></script>
+<script src="./js/swiper.animate1.0.2.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
+    var opacity = 0.1;
     var mySwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
 //        pagination: '.swiper-pagination',
@@ -81,43 +101,52 @@
             shadowOffset: 10,
             shadowScale: 0.94
         },
-//        onSlideChangeStart: function (swiper) {
-//            console.log(swiper.activeIndex);
-//        },
-//        onSlideMove: function (swiper, event) {
-//            console.log('>>');
-//        }
-        onSlideChangeStart: function (swiper) {
-//            renderShadow(mySwiper.activeIndex);
-            console.log(this.slides);
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
         },
+        onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        },
+//        onSlideMove: function (swiper) {
+//            renderShadow(mySwiper.activeIndex);
+//        },
     });
+    /*function logoRender() {
+        $('.move-logo').animate({
+            opacity: 0.5,
+            bottom: "0.63rem"
+        },1000)
+    }
+    logoRender();
+    setInterval(logoRender(),1000, function () {
+        $('move-logo').css({
+            opacity: 0,
+            bottom: '0.20rem'
+        });
+        logoRender();
+    });*/
+
 //    $('.swiper-wrapper, .swiper-slide').css({
 //        width: '7.5rem',
 //        height: '13.31rem'
 //    });
-window.onload = function () {
-    function renderShadow(index) {
-        var num = 0.3;
-        var id = setInterval(function () {
-            var rotate = document.querySelector('.swiper-wrapper').style.transform;
-            var str1 = rotate.slice(rotate.indexOf('rotateX(')+8);
-            var ang = str1.slice(0, str1.indexOf('deg)'));
-            var present = (ang%90/90).toFixed(4);
-            num += present;
-            if(num >= 1){
-                num = 1;
-                clearInterval(id);
-            }
-            mySwiper.slides[index].style.opacity = num;
-        },10)
 
-    }
-
-}
-
-
-
+//    function renderShadow(index) {
+//        var id = setInterval(function () {
+//            var rotate = document.querySelector('.swiper-wrapper').style.transform;
+//            var str1 = rotate.slice(rotate.indexOf('rotateX(')+8);
+//            var ang = str1.slice(0, str1.indexOf('deg)'));
+//            var present = (ang%90/90).toFixed(4);
+//            opacity += present;
+//            if(opacity >= 1){
+//                opacity = 1;
+//                clearInterval(id);
+//            }
+//            console.log(present);
+//            $('body').css('background','rgba(0,0,0,'+ opacity +')');
+//        },10)
+//    }
 </script>
 </body>
 </html>
