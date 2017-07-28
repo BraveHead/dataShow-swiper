@@ -14,3 +14,5 @@
 
   7、moneySavePCServer: 银行存管PC端页面
 
+  8、safeGuarantee: 安全保障h5页面
+
