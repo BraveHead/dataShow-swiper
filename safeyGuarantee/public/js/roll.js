@@ -6,8 +6,6 @@
     var autoLbtime = 1;         //autoLbtime为轮播间隔时间（单位秒）
     var touch = true;           //touch=true为开启触摸滑动
     var slideBt = true;         //slideBt=true为开启滚动按钮
-
-
     var slideNub;               //轮播图片数量
 
     //窗口大小改变时改变轮播图宽高
@@ -17,7 +15,6 @@
 
 
     $(function(){
-        $(".slide").height($(".slide").width()*0.56);
         slideNub = $(".slide .img").size();             //获取轮播图片数量
         for(i=0;i<slideNub;i++){
             $(".slide .img:eq("+i+")").attr("data-slide-imgId",i);
@@ -52,8 +49,6 @@
                 }
             }
         }
-
-
         //根据轮播图片数量设定轮播图按钮数量
         if(slideBt){
             for(i=1;i<=slideNub;i++){
@@ -78,8 +73,6 @@
         slideLi();
         imgClickFy();
     })
-
-
     //右滑动
     function right(){
         var fy = new Array();
@@ -96,8 +89,6 @@
         imgClickFy();
         slideLi();
     }
-
-
     //左滑动
     function left(){
         var fy = new Array();
@@ -161,10 +152,16 @@
         _content.addEventListener("touchmove", touchMove, false);
         _content.addEventListener("touchend", touchEnd, false);
         function touchStart(event) {
+            event.stopImmediatePropagation();
+            $('body').css({
+                'position': 'fixed',
+                'top': 0
+            });
             var touch = event.targetTouches[0];
             _start = touch.pageY;
         }
         function touchMove(event) {
+            $('body').css('top', 0);
             var touch = event.targetTouches[0];
             _end = (_start - touch.pageY);
         }
@@ -176,8 +173,13 @@
             }else if(_end > 10){
                 right();
                 _end=0;
+                    $('body').css({
+                        'position': "fixed",
+                        'top':0
+                    });
             }
         }
     }
+
 
 })();

@@ -16,7 +16,6 @@ body {
     width: 7.50rem;
     height: 12.03rem;
     position: relative;
-    top: -0.20rem;
 }
 .swiper-slide {
     width: 7.5rem;
@@ -40,7 +39,7 @@ body {
     }
     100%{
         opacity: 0.5;
-        bottom: 0.68rem;
+        bottom: 0.78rem;
     }
 }
 @-moz-keyframes moveUp {
@@ -50,7 +49,7 @@ body {
     }
     100%{
         opacity: 0.5;
-        bottom: 0.68rem;
+        bottom: 0.78rem;
     }
 }
 @-ms-keyframes moveUp {
@@ -60,7 +59,7 @@ body {
     }
     100%{
         opacity: 0.5;
-        bottom: 0.68rem;
+        bottom: 0.78rem;
     }
 }
 @-o-keyframes moveUp {
@@ -70,7 +69,7 @@ body {
     }
     100%{
         opacity: 0.5;
-        bottom: 0.68rem;
+        bottom: 0.78rem;
     }
 }
 @-webkit-keyframes moveUp {
@@ -80,7 +79,7 @@ body {
     }
     100%{
         opacity: 0.5;
-        bottom: 0.68rem;
+        bottom: 0.78rem;
     }
 }
 .page1{
@@ -98,28 +97,28 @@ body {
     height: 3.11rem;
     position: absolute;
     top:0.75rem;
-    left: 0.24rem;
+    left: 0.20rem;
 }
 .page1-bot{
     position: absolute;
-    bottom: 1.05rem;
+    bottom: 1.35rem;
     width: 5.22rem;
     height: 0.90rem;
-    left: 0.57rem;
+    left: 0.77rem;
 }
 .page2-top{
     width: 4.68rem;
     height: 2.50rem;
     position: absolute;
-    top: 0.40rem;
+    top: 0.25rem;
     left: 0.90rem;
 }
 .page2-bot{
     width: 4.73rem;
     height: 3.17rem;
     position: absolute;
-    left: 0.90rem;
-    bottom: 0.90rem;
+    left: 0.95rem;
+    bottom: 1.10rem;
 }
 .page3-dif1{
     width: 5.01rem;
@@ -241,7 +240,7 @@ body {
     position: absolute;
     top:6.71rem;
     left: 1.77rem;
-    width: 3.77rem;
+    width: 3.37rem;
     height: 0.61rem;
 }
 .page7-dif4{
@@ -273,58 +272,68 @@ body {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    top: 0.60rem;
+    top: 2.55rem;
+    width: 5.23rem;
+    height: 7.75rem;
 }
 .slide{
-    width: 100%;
-    min-height: 180px;
-    overflow: hidden;
+    width: 5.23rem;
+    height: 7.75rem;
     position: relative;
-
 }
 .slide .img{
-    overflow: hidden;
+    width: 5.23rem;
+    height: 3.69rem;
     position: absolute;
     transition: width 0.4s,height 0.4s,top 0.4s,left 0.4s,z-index 0.4s;
+    -webkit-box-shadow: 0.10rem 0.10rem 0.20rem rgba(0,0,0,0.4);
+    -moz-box-shadow: 0.10rem 0.10rem 0.20rem rgba(0,0,0,0.4);
+    box-shadow: 0.10rem 0.10rem 0.20rem rgba(0,0,0,0.4);
+    border-radius: 0.15rem;
 }
 .slide .img img{
-    width: calc(100% - 14px);
-    height: calc(100% - 14px);
-    margin: 7px;
+    width: 5.23rem;
+    height: 3.69rem;
+    margin: 0;
 }
 .slide .img1{
-    width: 100%;
-    height: 100;
-    top: 30%;
-    left: 10%;
+    top: 0;
     z-index: 1;
-}
-.slide .img2{
-    width: 100%;
-    height: 100%;
-    top: 20%;
-    left: 10%;
-    z-index: 2;
+    animation: rollScrollOut 1s ease both;
 }
 .slide .img3{
-    width: 100%;
-    height: 100%;
-    top: 10%;
-    left: 10%;
+    top: 4.09rem;
+    z-index: 2;
+    animation: rollScrollOut 1s ease both;
+}
+.slide .img2{
+    top: 1.98rem;
     z-index: 3;
+    animation: rollScroll 1s ease both;
+}
+@keyframes rollScrollIn {
+    0%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes rollScrollOut {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.8);
+    }
 }
 .slide .img4{
-    width: 100%;
-    height: 100%;
-    top: 20%;
-    left: 10%;
-    z-index: 2;
+    top: 1.98rem;
+    z-index: -2;
+    animation: rollScrollOut 1s ease both;
 }
 .slide .img5{
-    width: 100%;
-    height: 100%;
     top: 30%;
-    left: 10%;
     z-index: 1;
 }
 .slide-bt{
