@@ -16,3 +16,7 @@
 
   8、safeGuarantee: 安全保障h5页面
 
+  9、integralActivityPc：积分活动Pc端页面
+
+  10、integralActivityApp: 积分活动App端页面
+

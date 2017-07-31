@@ -145,12 +145,14 @@
             })
         },
         filters: {
+            //金额数字的格式化
             filterFun : function (num) {
                 return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,') + '.00';
             },
             filterNOToFixed: function (num) {
                 return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')+ '.00';
             },
+            //时间格式的格式化
             filterTime: function () {
                 var item = new Date();
                 var y = item.getFullYear(),
