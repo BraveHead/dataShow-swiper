@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <!--ios适配meta-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>晴天助理财-公司简介</title>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<div class="tabs">
+    <ul class="clear">
+        <li class="title-normal active">公司简介</li>
+        <li class="title-normal">高管简介</li>
+        <li class="title-normal">发展历程</li>
+        <li class="title-normal">合作伙伴</li>
+    </ul>
+</div>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="images/1_bg_little.jpg" class="one-bg-little"/>
+            <img data-src="images/1_bg.png" class="one-bg swiper-lazy"/>
+            <!--<div class="swiper-lazy-preloader"></div>-->
+        </div>
+        <div class="swiper-slide">
+            <img data-src="images/2_bg.jpg" class="two-bg swiper-lazy"/>
+            <!--<div class="swiper-lazy-preloader"></div>-->
+        </div>
+        <div class="swiper-slide">
+            <img data-src="images/3_1.jpg" class="thr-1 swiper-lazy"/>
+            <div class="course-2017">
+                <div class="course-title">
+                    <a></a>
+                    <img src="images/course-logo@2x.png"/>
+                    <b></b>
+                </div>
+                <div class="title-time">
+                    <img src="images/2017@2x.png"/>
+                </div>
+                <ul class="course-list">
+                    <li>
+                        <b>2017.7.24</b>
+                        <p>晴天助与上海银行签订资金存管协议</p>
+                    </li>
+                    <li>
+                        <b>2017.6.17</b>
+                        <p>成交额突破1亿，注册人数达到16000人次</p>
+                    </li>
+                    <li>
+                        <b>2017.6.13</b>
+                        <p>获准加入中国互联网金融企业俱乐部，正式授予会员证书</p>
+                    </li>
+                    <li>
+                        <b>2017.5.9</b>
+                        <p>注册用户超过1万人次，成交额突破6000万元</p>
+                    </li>
+                    <li>
+                        <b>2017.5.3</b>
+                        <p>实缴注册资本2000万元，超过80%网贷平台</p>
+                    </li>
+                    <li>
+                        <b>2017.2.1</b>
+                        <p>成交额突破3000万，注册人数达到8200人</p>
+                    </li>
+                </ul>
+                <div class="title-time">
+                    <img src="images/2016@2x.png"/>
+                </div>
+                <ul class="course-list">
+                    <li>
+                        <b>2016.12.23</b>
+                        <p>与新华社中国经济信息社浙江中心签署合作协议</p>
+                    </li>
+                    <li>
+                        <b>2016.12.22</b>
+                        <p>浦江分公司盛大开业</p>
+                    </li>
+                    <li>
+                        <b>2016.11.28</b>
+                        <p>晴天助正式上线运营</p>
+                    </li>
+                    <li>
+                        <b>2016.11.14</b>
+                        <p>成交额突破1000万，注册人数达到3200人次</p>
+                    </li>
+                    <li>
+                        <b>2016.11.10</b>
+                        <p>与政府平台浙里金服旗下浙里投正式签约战略合作</p>
+                    </li>
+                    <li>
+                        <b>2016.11.2</b>
+                        <p>获得增值电信业务经营许可证（ICP经营许可证）</p>
+                    </li>
+                    <li>
+                        <b>2016.10.21</b>
+                        <p>获准加入国内首个金融科技协会-浙江省金融科技协会</p>
+                    </li>
+                    <li>
+                        <b>2016.10.13</b>
+                        <p>批准成为浙江省投融资协会会员，并于11月15日正式 获取会员证书</p>
+                    </li>
+                    <li>
+                        <b>2016.9.25</b>
+                        <p>获得安全联盟行业认证证书</p>
+                    </li>
+                    <li>
+                        <b>2016.9.22</b>
+                        <p>获得互联网金融认证证书</p>
+                    </li>
+                    <li>
+                        <b>2016.8.1</b>
+                        <p>获得计算机软件著作权等级证书</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <img data-src="images/4_bg.png" class="four-bg swiper-lazy"/>
+        </div>
+    </div>
+</div>
+
+<script src="js/autoSetRem.js"></script>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/swiper-3.4.2.jquery.min.js"></script>
+<script>
+
+    var swiper = new Swiper('.swiper-container', {
+        lazyLoading : true,
+        lazyLoadingInPrevNext : true,
+        autoHeight: true, //enable auto height
+        onSlideChangeStart: function (swiper) {
+            $('.tabs li').removeClass('active').eq(swiper.activeIndex).addClass('active');
+
+        }
+    });
+
+    $('.tabs li').on('touchstart, mousedown',function () {
+        var titleIndex = $(this).index();
+        $('.tabs li').removeClass('active').eq(titleIndex).addClass('active');
+
+        swiper.slideTo(titleIndex);
+    })
+
+</script>
+</body>
+</html>
