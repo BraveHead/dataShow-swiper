@@ -20,3 +20,9 @@
 
   10、integralActivityApp: 积分活动App端页面
 
+  11、companyProfile: 公司简介
+
+  12、huaXiaCooperation: 华夏国通PC
+
+  13、huaXiaCooperationApp: 华夏国通App
+

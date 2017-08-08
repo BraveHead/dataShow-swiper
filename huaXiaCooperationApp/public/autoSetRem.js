@@ -7,7 +7,7 @@ var autoSetRem = (function(doc, win) {
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
         set = function(paper) {
             if(paper==null){
-                paper=375;
+                paper=750;
             }
             var clientWidth = docEl.clientWidth || win.innerWidth || screen.width;
             if(clientWidth<=320){
@@ -27,4 +27,4 @@ var autoSetRem = (function(doc, win) {
     doc.addEventListener('DOMContentLoaded', set, false);
 })(document, window);
 
-autoSetRem.set(375);
+autoSetRem.set(750);

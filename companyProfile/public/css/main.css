@@ -74,6 +74,10 @@ input, button, select, textarea {
     width: 100%;
     padding-top: 0.82rem;
 }
+.swiper-wrapper{
+    width: 100%;
+    height: auto;
+}
 
 .swiper-slide{
     width: 100%;
@@ -88,10 +92,10 @@ input, button, select, textarea {
     z-index: 1;
 }
 .one-bg{
-    position: absolute;
+    /*position: absolute;*/
     width: 7.50rem;
     height: 14.12rem;
-    z-index: 2;
+    /*z-index: 2;*/
 }
 .four-bg{
     width: 7.5rem;

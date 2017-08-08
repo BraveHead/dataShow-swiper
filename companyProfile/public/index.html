@@ -23,16 +23,16 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img src="images/1_bg_little.jpg" class="one-bg-little"/>
-            <img data-src="images/1_bg.png" class="one-bg swiper-lazy"/>
+            <!--<img src="images/1_bg_little.jpg" class="one-bg-little"/>-->
+            <img src="images/1_bg.png" class="one-bg"/>
             <!--<div class="swiper-lazy-preloader"></div>-->
         </div>
         <div class="swiper-slide">
-            <img data-src="images/2_bg.jpg" class="two-bg swiper-lazy"/>
+            <img src="images/2_bg.jpg" class="two-bg"/>
             <!--<div class="swiper-lazy-preloader"></div>-->
         </div>
         <div class="swiper-slide">
-            <img data-src="images/3_1.jpg" class="thr-1 swiper-lazy"/>
+            <img src="images/3_1.jpg" class="thr-1"/>
             <div class="course-2017">
                 <div class="course-title">
                     <a></a>
@@ -120,7 +120,7 @@
             </div>
         </div>
         <div class="swiper-slide">
-            <img data-src="images/4_bg.png" class="four-bg swiper-lazy"/>
+            <img src="images/4_bg.png" class="four-bg"/>
         </div>
     </div>
 </div>
@@ -136,10 +136,8 @@
         autoHeight: true, //enable auto height
         onSlideChangeStart: function (swiper) {
             $('.tabs li').removeClass('active').eq(swiper.activeIndex).addClass('active');
-
         }
     });
-
     $('.tabs li').on('touchstart, mousedown',function () {
         var titleIndex = $(this).index();
         $('.tabs li').removeClass('active').eq(titleIndex).addClass('active');
