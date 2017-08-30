@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全屏滚动测试</title>
+    <link rel="stylesheet" href="swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide1">
+
+        </div>
+        <div class="swiper-slide slide2">
+
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelector('.slide1').style.height = document.documentElement.clientHeight + 'px';
+</script>
+
+
+<script src="jquery-1.10.1.min.js"></script>
+<script src="swiper-3.4.2.jquery.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        speed:400,
+        mode : 'vertical',
+        resistance:'100%',
+        autoHeight: true,
+        mousewheelControl : true,
+        grabCursor: true,
+//        onFirstInit:function(){
+//            $('.slide1').addClass('ani-slide');
+//        }
+    });
+    mySwiper.wrapperTransitionEnd(function () {//闅愯棌鏂规硶
+        $('.ani-slide').removeClass('ani-slide')
+        $('.swiper-slide').eq(mySwiper.activeIndex).addClass('ani-slide')
+    },true);
+</script>
+</body>
+</html>

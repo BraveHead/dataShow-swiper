@@ -38,7 +38,7 @@
         mounted: function () {
             var self = this;
             $.ajax({
-                url: 'https://www.qtz360.com/api2.3/rest/summary',
+                url: 'https://www.qtz360.com/api2.2.2/rest/summary',
                 method: 'GET',
                 dataType: 'json'
             }).then(function (res) {

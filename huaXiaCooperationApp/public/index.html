@@ -13,21 +13,26 @@
             margin: 0;
             padding: 0;
         }
+        body{
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
         .img-bg-little{
-            width: 7.5rem;
-            height: 46.36rem;
+           width: 100%;
             position: absolute;
+            top: 0;
+            z-index: 1;
         }
         .img-bg{
+            width: 100%;
             position: absolute;
-            width: 7.5rem;
-            height: 46.36rem;
+            top: 0;
+            z-index: 2;
         }
     </style>
 </head>
 <body>
 <img src="img-bg-little.jpg" class="img-bg-little"/>
 <img src="img-bg.jpg" class="img-bg"/>
-<script src="autoSetRem.js"></script>
 </body>
 </html>
