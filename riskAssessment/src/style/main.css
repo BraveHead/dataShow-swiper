@@ -10,8 +10,12 @@ body {
     color:#030303;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;
 }
 ul,li{list-style: none;}
+a{text-decoration: none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+
 .swiper-container {
     width: 3.75rem;
     height: 6.03rem;
@@ -75,7 +79,7 @@ ul,li{list-style: none;}
 }
 .flip-page{
     display: inline-block;
-    width: 0.45rem;
+    width: auto;
     height: 0.18rem;
     margin-top: 0.20rem;
     font-size: 15px;
@@ -90,4 +94,73 @@ ul,li{list-style: none;}
     float: right;
     margin-right: 0.16rem;
     display: none;
+}
+.submit-risk{
+    display: block;
+    margin: 0 auto;
+    width: 3.40rem;
+    height: 0.44rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 0.44rem;
+    border-radius: 0.50rem;
+    background-color: #e5e5e5;
+    margin-top: 0.58rem;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+.swiper-container {
+    width: 100%;
+    height: auto;
+}
+
+.risk-logo{
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.risk-logo>p{
+    display: block;
+    font-size: 15px;
+    line-height: 0.18rem;
+    color: #adadad;
+    padding-top: 0.50rem;
+    padding-bottom: 0.35rem;
+    letter-spacing: -0.36px;
+}
+.risk-logo>img{
+    width: 1.79rem;
+    height: 1.39rem;
+    padding-bottom: 0.58rem;
+}
+.result-same{
+    display: block;
+    margin: 0 auto;
+    width: 3.40rem;
+    height: 0.44rem;
+    text-align: center;
+    line-height: 0.44rem;
+    border-radius: 0.50rem;
+    font-size: 17px;
+    letter-spacing: -0.41px;
+}
+.sure-result{
+    margin-top: 0.20rem;
+    background-color: #2dafff;
+    color: #ffffff;
+}
+.sure-result:hover, .submit-risk:hover{
+    background-color: #0098ff;
+}
+.again-rest{
+    color: #2dafff;
+    border: 0.01rem solid #2dafff;
+    margin-top: 0.10rem;
+}
+.again-rest:hover{
+    background-color: #e0f4ff;
 }

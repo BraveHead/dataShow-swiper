@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <!--ios适配meta-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>测评结果</title>
+    <link rel="stylesheet" href="style/main.min.css"/>
+</head>
+<body>
+<div class="risk-logo">
+    <p>您的风险测评结果为</p>
+    <img/>
+</div>
+<a class="sure-result result-same">确定</a>
+<a class="again-rest result-same" href="./index.html">重新测评</a>
+<script src="script/lib/autoSetRem.js"></script>
+<script src="script/lib/jquery-1.10.1.min.js"></script>
+<script>
+    var score = parseInt(sessionStorage.getItem('score'));
+    if( score<=40 && score > 35){
+        $('img').attr('src', 'assets/jijing@2x.png');
+    }else if(score <= 25 && score > 15){
+        $('img').attr('src', 'assets/wenjian@2x.png');
+    }else if(score <= 35 && score > 25){
+        $('img').attr('src', 'assets/pingheng@2x.png');
+    }else if(score <= 15 && score >= 10){
+        $('img').attr('src', 'assets/baoshou@2x.png');
+    }
+</script>
+</body>
+</html>
