@@ -1,34 +1,6 @@
 /**
  * Created by Yy on 2017/7/12.
  */
-    var autoSetRem = (function(doc, win) {
-        var docEl = doc.documentElement,
-            done = false,
-            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-            set = function(paper) {
-                if(paper==null){
-                    paper=375;
-                }
-                var clientWidth = docEl.clientWidth || win.innerWidth || screen.width;
-                if(clientWidth<=320){
-                    clientWidth = 320;
-                }
-                if (!clientWidth) return;
-                docEl.style.fontSize = 100 * (clientWidth / paper) + 'px';
-                done = true;
-                return done;
-            };
-        return {
-            set:set
-        };
-        //AbortifbrowserdoesnotsupportaddEventListener
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, set, false);
-        doc.addEventListener('DOMContentLoaded', set, false);
-    })(document, window);
-
-    autoSetRem.set(375);
-
     var app = new Vue({
         el: '#app',
         data: {
@@ -38,7 +10,7 @@
         mounted: function () {
             var self = this;
             $.ajax({
-                url: 'https://www.qtz360.com/api2.2.2/rest/summary',
+                url: 'https://www.qtz360.com/api2.2.3/rest/summary',
                 method: 'GET',
                 dataType: 'json'
             }).then(function (res) {
