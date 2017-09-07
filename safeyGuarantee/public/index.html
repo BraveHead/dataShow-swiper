@@ -85,13 +85,9 @@
                     <div class="img"><img src="assests/9.5.png"/></div>
                 </div>
             </div>
-            <img src="assests/mov-logo.png" class="move-logo move-up"/>
         </div>
     </div>
-    <!--&lt;!&ndash; Add Pagination &ndash;&gt;-->
-    <!--<div class="swiper-pagination"></div>-->
 </div>
-
 <!-- Swiper JS -->
 <script src="./js/autoSetRem.js"></script>
 <script src="./js/jquery-1.10.1.min.js"></script>
@@ -119,45 +115,7 @@
         onSlideChangeEnd: function(swiper){
             swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
         },
-//        onSlideMove: function (swiper) {
-//            renderShadow(mySwiper.activeIndex);
-//        },
     });
-    /*function logoRender() {
-        $('.move-logo').animate({
-            opacity: 0.5,
-            bottom: "0.63rem"
-        },1000)
-    }
-    logoRender();
-    setInterval(logoRender(),1000, function () {
-        $('move-logo').css({
-            opacity: 0,
-            bottom: '0.20rem'
-        });
-        logoRender();
-    });*/
-
-//    $('.swiper-wrapper, .swiper-slide').css({
-//        width: '7.5rem',
-//        height: '13.31rem'
-//    });
-
-//    function renderShadow(index) {
-//        var id = setInterval(function () {
-//            var rotate = document.querySelector('.swiper-wrapper').style.transform;
-//            var str1 = rotate.slice(rotate.indexOf('rotateX(')+8);
-//            var ang = str1.slice(0, str1.indexOf('deg)'));
-//            var present = (ang%90/90).toFixed(4);
-//            opacity += present;
-//            if(opacity >= 1){
-//                opacity = 1;
-//                clearInterval(id);
-//            }
-//            console.log(present);
-//            $('body').css('background','rgba(0,0,0,'+ opacity +')');
-//        },10)
-//    }
     var mySwiper2 = new Swiper('.swiper-container2', {
         direction: 'vertical',
         effect: 'coverflow',
