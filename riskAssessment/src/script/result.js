@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let baseUrl = 'https://test.qtz360.com/api/rest/';   //测试接口
+    let baseUrl = 'https://test.qtz360.com/api1.1.0/rest/';   //测试接口
     //点击重新测评
     $('.again-rest').on('click', function () {
         sessionStorage.setItem('score',0);
@@ -37,7 +37,7 @@ $(document).ready(function () {
         } else if (typeof iosJsSafe === 'function') {
             iosJsSafe();
         } else {
-            window.location.href = 'https://test.qtz360.com/h5/home.html?v=1504852248180#/';
+            window.location.href = 'https://test.qtz360.com/h5/home.html#/user/setting';
         }
     }
 
