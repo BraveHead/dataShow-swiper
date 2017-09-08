@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    sessionStorage.removeItem('score');
     let swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         // paginationClickable: '.swiper-pagination',
@@ -46,6 +45,7 @@ $(document).ready(function () {
         slideToFun(crudeIndex);
     });
 
+    let pause = true;
     $('.risk-ul>li').on('click', function () {
         $('.risk-ul').eq(crudeIndex).find('img').attr('src', 'assets/no-choice@2x.png');
         $(this).find('img').attr('src', 'assets/choice@2x.png');
@@ -54,13 +54,19 @@ $(document).ready(function () {
         crudeIndex += 1;
         if (crudeIndex >= 9) {
             crudeIndex = 9;
-            $('.risk-ul>li>img').on('click', () => {
+            $('.risk-ul>li').on('click', () => {
                 $('.submit-risk').css('background-color', '#2dafff').on('click', () => {
-                    for (let i = 0; i < scoreArr.length; i++) {
-                        scoreCount += scoreArr[i];
+                    if(pause){
+                        for (let i = 0; i < scoreArr.length; i++) {
+                            pause = false;
+                            scoreCount += scoreArr[i];
+                            if(i === scoreCount.length-1){
+                                pause = true;
+                            }
+                        }
+                        window.sessionStorage.setItem('score', scoreCount);
+                        window.location.href = './riskResult.html';
                     }
-                    window.sessionStorage.setItem('score', scoreCount);
-                    window.location.href = './riskResult.html';
                 })
             })
         }

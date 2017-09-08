@@ -16,51 +16,9 @@
     <img/>
 </div>
 <a class="sure-result result-same">确定</a>
-<a class="again-rest result-same" href="./index.html">重新测评</a>
+<a class="again-rest result-same">重新测评</a>
 <script src="script/lib/autoSetRem.js"></script>
 <script src="script/lib/jquery-1.10.1.min.js"></script>
-<script>
-    var score = parseInt(sessionStorage.getItem('score'));
-    var flag = 0;
-    if( score<=40 && score > 35){
-        $('img').attr('src', 'assets/jijing@2x.png');
-        flag = 3;
-    }else if(score <= 25 && score > 15){
-        $('img').attr('src', 'assets/wenjian@2x.png');
-        flag = 1;
-    }else if(score <= 35 && score > 25){
-        $('img').attr('src', 'assets/pingheng@2x.png');
-        flag = 2;
-    }else if(score <= 15 && score >= 10){
-        $('img').attr('src', 'assets/baoshou@2x.png');
-        flag =0;
-    }
-    document.cookie = 'token=yqtywu123uwhqwe';
-    //获取cookie
-    function getCookie(cname) {
-        let name = cname + "=";
-        let ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i].trim();
-            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-        }
-        return "";
-    }
-    console.log(getCookie('token'), score);
-    //ios,android, h5返回方法
-    function appJs(_type) {
-        if (window.safe.safe) {
-            window.safe.safe(_type);
-        } else if (typeof iosJsSafe === 'function') {
-            iosJsSafe();
-        } else {
-            window.location.href = 'https://test.qtz360.com/h5/home.html#/user/setting';
-        }
-    }
-
-    //点击确定提交数据
-
-
-</script>
+<script src="script/result.min.js"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@ gulp.task('serve', ['css', "copyHtml", "copyJs", "buildJs", "images"], function 
     gulp.watch(SRC +"/assets/(*.png|*.jpg|*.svg)", ['images']);
     gulp.watch(SRC + "/style/*.css", ['css']);
     gulp.watch(SRC + "/*.html", ['copyHtml']);
-    gulp.watch(SRC + "/script/main.js", ['buildJs']);
+    gulp.watch(SRC + "/script/*.js", ['buildJs']);
 });
 
 // 编译压缩css 输出到目标目录
@@ -93,7 +93,8 @@ gulp.task('copyJs', function () {
 //  编译自定义的js文件
 gulp.task("buildJs", function () {
     var arr = [
-        "main.js"
+        "main.js",
+        "result.js"
     ];
 
     for (var i = 0; i < arr.length; i++) {
@@ -112,6 +113,8 @@ gulp.task("buildJs", function () {
             .bundle()
             .pipe(source(arr[i]))
             .pipe(rename({suffix:'.min'}))
+            // .pipe(buffer())
+            // .pipe(uglify())
             .pipe(gulp.dest(DEST + '/script/'))
             .pipe(browserSync.reload({stream: true}));
     }
