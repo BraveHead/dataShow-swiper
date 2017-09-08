@@ -47,6 +47,19 @@
         return "";
     }
     console.log(getCookie('token'), score);
+    //ios,android, h5返回方法
+    function appJs(_type) {
+        if (window.safe.safe) {
+            window.safe.safe(_type);
+        } else if (typeof iosJsSafe === 'function') {
+            iosJsSafe();
+        } else {
+            window.location.href = 'https://test.qtz360.com/h5/home.html#/user/setting';
+        }
+    }
+
+    //点击确定提交数据
+
 
 </script>
 </body>

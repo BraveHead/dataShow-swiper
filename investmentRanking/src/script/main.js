@@ -1,15 +1,15 @@
 
 $(document).ready(function () {
     // let baseUrl = 'https://test.qtz360.com/api/rest/';  //测试接口
-    let baseUrl = 'https://www.qtz360.com/api2.2.3/rest/';  //测试接口
+    let baseUrl = 'https://www.qtz360.com/api2.2.3/rest/';  //正式接口
     let userItemUl = $('.user-item-ul');
     function filterNumber(num) {
         return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,') + '元';
     }
+    let date = new Date();
+    $('.touzi-title').html(date.getMonth() + 1 + '月' + date.getDate() + '日排行榜');
     $.getJSON(baseUrl + 'borrowToday').then((res)=>{
-        console.log(res);
         if( res.rcd === '0000'){
-            console.log('123123');
             for(let i = 0; i < res.data.length; i++){
                 userItemUl.append('<ul class="ul-list-same ul-list-data"> ' +
                         '<li '+ 'rank=' + res.data[i].rank + ' class="rank"><img src="assets/top-1.png"/><span>' + res.data[i].name + '</span></li> ' +
@@ -22,7 +22,6 @@ $(document).ready(function () {
             // console.log($('.rank').attr('rank'));
             let rank = $('.rank');
             for(let i = 0; i <rank.length;i++){
-                console.log($('.rank').eq(i));
                 switch (rank.eq(i).attr('rank')){
                     case '0':
                         $('.rank>img').eq(i).attr('src','assets/top-1.png').addClass('top-1');
@@ -50,11 +49,9 @@ $(document).ready(function () {
                 }
             }
         }else{
-            console.log('error>>>');
+            // console.log('error>>>');
         }
     }, (error)=>{
-        console.log(error);
-    })
-
-    console.log();
+        // console.log(error);
+    });
 });

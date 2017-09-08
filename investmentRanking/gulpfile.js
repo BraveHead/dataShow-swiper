@@ -111,6 +111,8 @@ gulp.task("buildJs", function () {
             }))
             .bundle()
             .pipe(source(arr[i]))
+            .pipe(buffer())
+            .pipe(uglify())
             .pipe(rename({suffix:'.min'}))
             .pipe(gulp.dest(DEST + '/script/'))
             .pipe(browserSync.reload({stream: true}));

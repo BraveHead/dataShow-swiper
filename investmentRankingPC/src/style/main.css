@@ -113,8 +113,8 @@ a{text-decoration: none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
     display: inline-block;
     float: right;
     width: 50px;
-    left: 1.88rem;
     text-align: left;
+    margin-right: 5px;
 }
 .top-1{
     width: 43px;

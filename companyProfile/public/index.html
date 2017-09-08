@@ -14,10 +14,10 @@
 <body>
 <div class="tabs">
     <ul class="clear">
-        <li class="title-normal active">公司简介</li>
-        <li class="title-normal">高管简介</li>
-        <li class="title-normal">发展历程</li>
-        <li class="title-normal">合作伙伴</li>
+        <li class="title-normal"><span class="tabs-bot active">公司简介</span></li>
+        <li class="title-normal"><span class="tabs-bot">高管简介</span></li>
+        <li class="title-normal"><span class="tabs-bot">发展历程</span></li>
+        <li class="title-normal"><span class="tabs-bot">合作伙伴</span></li>
     </ul>
 </div>
 <div class="swiper-container">
@@ -143,12 +143,12 @@
         lazyLoadingInPrevNext : true,
         autoHeight: true, //enable auto height
         onSlideChangeStart: function (swiper) {
-            $('.tabs li').removeClass('active').eq(swiper.activeIndex).addClass('active');
+            $('.tabs li span').removeClass('active').eq(swiper.activeIndex).addClass('active');
         }
     });
     $('.tabs li').on('touchstart, mousedown',function () {
         var titleIndex = $(this).index();
-        $('.tabs li').removeClass('active').eq(titleIndex).addClass('active');
+        $('.tabs li span').removeClass('active').eq(titleIndex).addClass('active');
 
         swiper.slideTo(titleIndex);
     })

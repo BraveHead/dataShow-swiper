@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    sessionStorage.removeItem('score');
     let swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         // paginationClickable: '.swiper-pagination',
