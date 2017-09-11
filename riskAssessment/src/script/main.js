@@ -45,7 +45,16 @@ $(document).ready(function () {
         slideToFun(crudeIndex);
     });
 
+    //截取URL中的token
+    /**
+     * @param url  url后面当且仅当只拼接一个token
+     */
+    function getUrlInnerToken(url) {
+        return url.slice(url.indexOf('token=')+6);
+    }
+
     let pause = true;
+    var token;
     $('.risk-ul>li').on('click', function () {
         $('.risk-ul').eq(crudeIndex).find('img').attr('src', 'assets/no-choice@2x.png');
         $(this).find('img').attr('src', 'assets/choice@2x.png');
@@ -65,7 +74,12 @@ $(document).ready(function () {
                             }
                         }
                         window.sessionStorage.setItem('score', scoreCount);
-                        window.location.href = './riskResult.html';
+                        if(location.href.indexOf('token=') === -1){
+                            window.location.href = './riskResult.html';
+                        }else{
+                            token = getUrlInnerToken(location.href);
+                            window.location.href = './riskResult.html?token=' + token;
+                        }
                     }
                 })
             })

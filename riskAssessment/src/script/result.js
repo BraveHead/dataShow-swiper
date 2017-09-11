@@ -32,8 +32,8 @@ $(document).ready(function () {
     }
     //ios,android, h5返回方法
     function appJs(_type) {
-        if (typeof window.safe !== 'undefined') {
-            window.safe(_type);
+        if (typeof window.safe.safe !== 'undefined') {
+            window.safe.safe(_type);
         } else if (typeof iosJsSafe === 'function') {
             iosJsSafe();
         } else {
@@ -68,7 +68,7 @@ $(document).ready(function () {
         }).done(function (data) {
             //请求成功后
             if(data.rcd === '0000'){
-                appJs(token);
+                appJs(flag);
             }
         }).fail(function (error) {
             //请求失败后
