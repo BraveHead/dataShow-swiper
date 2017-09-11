@@ -53,7 +53,7 @@ $(document).ready(function () {
     $('.sure-result').on('click', function () {
         if(location.href.indexOf('token=') === -1){
             token = getCookie('token');
-            console.log(token);
+            // console.log(token);
         }else{
             token = getUrlInnerToken(location.href);
         }
@@ -72,7 +72,7 @@ $(document).ready(function () {
             }
         }).fail(function (error) {
             //请求失败后
-            console.log('error'+ error);
+            // console.log('error'+ error);
         }).always(function () {
             //无论失败成功都要做的
         })

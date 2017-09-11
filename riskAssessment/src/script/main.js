@@ -59,12 +59,13 @@ $(document).ready(function () {
         $('.risk-ul').eq(crudeIndex).find('img').attr('src', 'assets/no-choice@2x.png');
         $(this).find('img').attr('src', 'assets/choice@2x.png');
         scoreArr[crudeIndex] = imgIcon.index(this) + 1;
-        console.log(scoreArr);
+        // console.log(scoreArr);
         crudeIndex += 1;
         if (crudeIndex >= 9) {
             crudeIndex = 9;
             $('.risk-ul>li').on('click', () => {
                 $('.submit-risk').css('background-color', '#2dafff').on('click', () => {
+                    $(this).css('background-color','#0098ff');
                     if(pause){
                         for (let i = 0; i < scoreArr.length; i++) {
                             pause = false;

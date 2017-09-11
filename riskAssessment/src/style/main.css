@@ -153,7 +153,7 @@ a{text-decoration: none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
     background-color: #2dafff;
     color: #ffffff;
 }
-.sure-result:hover, .submit-risk:hover{
+.sure-result:hover{
     background-color: #0098ff;
 }
 .again-rest{
