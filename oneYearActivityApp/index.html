@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <title>晴天助运营一周年</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+        }
+        img{
+            width: 100%;
+            border: 0;
+            display: block;
+        }
+    </style>
+    <script src="https://www.qtz360.com/h5/plugins/wechat.js"></script>
+    <script>
+        function IsPC()
+        {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href = 'https://www.qtz360.com/h5/html/activity/20170915/p/index.html';
+        }
+    </script>
+</head>
+<body>
+<script>
+    var autoSetRem = (function (doc, win) {
+        var docEl = doc.documentElement,
+            done = false,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            set = function (paper) {
+                if (paper == null) {
+                    paper = 750;
+                }
+                var clientWidth = docEl.clientWidth || win.innerWidth || screen.width;
+                if(clientWidth <= 320){
+                    clientWidth = 320;
+                }
+                if (!clientWidth) return;
+                docEl.style.fontSize = 100 * (clientWidth / paper) + 'px';
+                done = true;
+                return done;
+            };
+        return {
+            set: set
+        };
+        //AbortifbrowserdoesnotsupportaddEventListener
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, set, false);
+        doc.addEventListener('DOMContentLoaded', set, false);
+    })(document, window);
+    autoSetRem.set(750);
+</script>
+<img src="pic-1.png"/>
+<div style="width: 100%;height: 8.29rem;position: relative">
+    <img src="pic-2.png"/>
+    <a class="link" href="https://www.qtz360.com/h5/home.html#/project/list" style="position: absolute;width: 3.10rem;height: 0.70rem;top: 4.60rem;left: 2.06rem"></a>
+</div>
+<img src="pic-3.png"/>
+<script src="https://www.qtz360.com/h5/plugins/wxfx.js"></script>
+</body>
+</html>
