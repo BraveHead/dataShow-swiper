@@ -4,30 +4,61 @@
     <meta charset="UTF-8">
     <title>晴天助运营1周年</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        body{
-            background-color: #ffefb8;
-        }
-        img{
+        a{
             display: block;
-            border: 0;
-            width: 747px;
-            margin: 0 auto;
+            width: 100%;
+        }
+        a:nth-child(1){
+            height: 399px;
+            background: url('pic-1.png') no-repeat center;
+            background-size: 1920px 399px;
+        }
+        a:nth-child(2){
+            height: 655px;
+            background: url('pic-2.png') no-repeat center;
+            background-size: 1920px 655px;
+        }
+        a:nth-child(3){
+            height: 574px;
+            background: url('pic-3.png') no-repeat center;
+            background-size: 1920px 574px;
+        }
+        a:nth-child(4){
+            height: 1606px;
+            background: url('pic-4.png') no-repeat center;
+            background-size: 1920px 1606px;
+        }a:nth-child(5){
+             height: 766px;
+             background: url('pic-5.png') no-repeat center;
+             background-size: 1920px 766px;
+         }
+        span{
+            display: block;
+            width: 240px;
+            height: 53px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 426px;
         }
     </style>
 </head>
 <body>
-<div style="margin: 0 auto;width: 1200px;background-color: #ffefb8">
-    <img src="pic-1.png"/>
-    <div style="width: 747px;height: 685px;margin: 0 auto;position: relative">
-        <img src="pic-2.png"/>
-        <a href="https://www.qtz360.com/borrow/list.do" style="width: 252px;height: 60px;position: absolute;top:400px;left: 235px;"></a>
-    </div>
-
-    <img src="pic-3.png"/>
-</div>
+<a></a>
+<a>
+    <span></span>
+</a>
+<a></a>
+<a></a>
+<a></a>
+<script>
+    document.querySelector('span').onclick = function () {
+        window.location.href = 'https://www.qtz360.com/borrow/list.do';
+    }
+</script>
 </body>
 </html>
