@@ -51,7 +51,7 @@ $(document).ready(function () {
     var token;
     //点击确定提交数据
     $('.sure-result').on('click', function () {
-        if(location.href.indexOf('token=') === -1){
+        if(location.href.indexOf('token=') == -1){
             token = getCookie('token');
             // console.log(token);
         }else{
@@ -69,6 +69,15 @@ $(document).ready(function () {
             //请求成功后
             if(data.rcd === '0000'){
                 appJs(flag);
+            }else if(data.rcd === 'E0001'){
+                $('.tan-kuang').show();
+                $('.tan-kuang-center>p').html(data.rmg);
+            }else if(data.rcd === 'E0005'){
+                $('.tan-kuang').show();
+                $('.tan-kuang-center>p').html(data.rmg);
+            }else{
+                $('.tan-kuang').show();
+                $('.tan-kuang-center>p').html(data.rmg);
             }
         }).fail(function (error) {
             //请求失败后
@@ -76,5 +85,8 @@ $(document).ready(function () {
         }).always(function () {
             //无论失败成功都要做的
         })
-    })
+    });
+    $('.close').on('click', function () {
+        $('.tan-kuang').hide();
+    });
 });

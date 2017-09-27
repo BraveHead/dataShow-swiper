@@ -10,8 +10,15 @@ body {
     color:#030303;
     margin: 0;
     padding: 0;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
     -webkit-user-select: none;
+}
+input{background-color: #ffffff}
+input
+{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-user-modify:read-write-plaintext-only;
+    background-color: #ffffff
 }
 ul,li{list-style: none;}
 a{text-decoration: none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
@@ -163,4 +170,39 @@ a{text-decoration: none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
 }
 .again-rest:hover{
     background-color: #e0f4ff;
+}
+.tan-kuang{
+    top: 0;
+    display: none;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+}
+.tan-kuang a{
+    width: 2.00rem;
+    z-index: 101;
+    border-radius: .5rem;
+    background-color: #2dafff;
+    color: #ffffff;
+    border: 0.01rem solid #2dafff;
+    position: relative;
+    top: 1.60rem;
+}
+.tan-kuang-center{
+    width: 3.40rem;
+    height: 2.50rem;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    margin-top: -1.25rem;
+}
+.tan-kuang-center p{
+    position: relative;
+    display: block;
+    text-align: center;
+    top: .8rem;
 }
