@@ -147,6 +147,7 @@ img:focus{background-color: #ffffff}
     top: -0.20rem;
     left: -0.10rem;
     z-index: 2;
+    display: none;
 }
 .fl-tx{
     font-size: 0.24rem;
@@ -191,14 +192,14 @@ img:focus{background-color: #ffffff}
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    top: 4.55rem;
+    top: 25%;
 }
 .close-alert{
     width: 0.43rem;
     height: 0.43rem;
     position: absolute;
     top: -1.66rem;
-    left: 0;
+    left: 0.03rem;
     cursor: pointer;
 }
 .close-line{
@@ -223,7 +224,7 @@ img:focus{background-color: #ffffff}
     background: url("../assets/red-alert-bg@2x-2.png") no-repeat center;
     background-size: 5.86rem 4.08rem;
     position: relative;
-    top: 4.54rem;
+    top: 25%;
     color: #ffffff;
     font-size: 0.24rem;
     line-height: 0.40rem;
@@ -248,21 +249,26 @@ img:focus{background-color: #ffffff}
 /*弹框样式*/
 .tan-kuang-bg{
     width: 100%;
-    height: 100%;
-    background: #16577f;
-    /*background: rgba(0,0,0, 0.5);*/
-    display: block;
-    position: fixed;
+    height: 0;
+    background: rgba(0,0,0, 0.5);
+    display: flex;
+    position: absolute;
     top: 0;
-    z-index: 10;
+    z-index: 11;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
 .login-bg{
+    /*flex: auto;*/
+    margin: auto;
     width: 7.06rem;
     background-color: #ffffff;
     position: relative;
-    margin-right: auto;
-    margin-left: auto;
-    top: 3.74rem;
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+    /*top: 3.74rem;*/
     text-align: center;
     padding-bottom: .50rem;
 }

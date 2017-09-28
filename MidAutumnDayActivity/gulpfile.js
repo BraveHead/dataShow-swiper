@@ -41,16 +41,23 @@ gulp.task('serve', ['css', "copyHtml", "copyJs", "buildJs", "images"], function 
 
 // 编译压缩css 输出到目标目录
 gulp.task('css', function () {
-    var processors = [
-        autoprefixer,
-        cssnext,
-        precss
-    ];
+    // var processors = [
+    //     autoprefixer,
+    //     cssnext,
+    //     precss
+    // ];
     gulp.src([SRC + '/style/*.css'])  //,'src/public/scss/*.scss'
-        .pipe(sourcemaps.init())
-        .pipe(postcss([
-            salad({browsers: browserslist('last 5 version, > 0.1%')})
-        ]))
+        // .pipe(sourcemaps.init())
+        // .pipe(postcss([
+        //     salad({browsers: browserslist('last 5 version, > 0.1%')})
+        // ]))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'Android >= 4.0'],
+            cascade: true, //是否美化属性值 默认：true 像这样：
+            //-webkit-transform: rotate(45deg);
+            //        transform: rotate(45deg);
+            remove:true //是否去掉不必要的前缀 默认：true
+        }))
         .pipe(minifycss())
         .pipe(rename({suffix:'.min'}))
         .pipe(sourcemaps.write())
@@ -93,7 +100,7 @@ gulp.task('copyJs', function () {
 //  编译自定义的js文件
 gulp.task("buildJs", function () {
     var arr = [
-        "main.js",
+        "main.js"
     ];
 
     for (var i = 0; i < arr.length; i++) {
@@ -111,8 +118,6 @@ gulp.task("buildJs", function () {
             }))
             .bundle()
             .pipe(source(arr[i]))
-            .pipe(buffer())
-            .pipe(uglify())
             .pipe(gulp.dest(DEST + '/script/'))
             .pipe(browserSync.reload({stream: true}));
     }

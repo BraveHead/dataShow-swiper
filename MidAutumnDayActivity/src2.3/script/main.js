@@ -1,16 +1,23 @@
 // import './lib/autoSetRem'
 
 $(document).ready(function () {
+    let baseUrl = 'https://test.qtz360.com/api1.1.0/rest/';
+    $('.tan-kuang-bg').css({
+        'height':'100%',
+        'position':'fixed',
+    });
     if(window.sessionStorage.getItem('login') === 'yes'){
         $('.red-btn').attr('src','assets/red-going-get@2x.png');
     }else if(window.sessionStorage.getItem('login') === 'over'){
         $('.red-btn').attr('src','assets/red-getted@2x.png');
+        redRender();
     }else{
         $('.red-btn').attr('src','assets/red-login@2x.png');
+
     }
     //投资规则点击弹出
     $('.touzi-rules').on('click', function () {
-        $('body').css('overflow','hidden');
+        $('html').css('overflow','hidden');
         $('.alert-rules').show().html(` <div class="rules-bg">
             <img src="assets/close-alert@2x.png" class="close-alert"/>
             <img src="assets/close-alert-line@2x.png" class="close-line"/>
@@ -25,7 +32,7 @@ $(document).ready(function () {
         </div>`);
         //点击去除弹框
         $('.close-alert').on('click', function () {
-            $('body').css('overflow','scroll');
+            $('html').css('overflow','scroll');
             $('.alert-rules').hide();
         });
     });
@@ -48,9 +55,10 @@ $(document).ready(function () {
         });
     });*/
     //点击弹出京东购物卡100
-    $('.jd-100').on('click', function () {
-        $('body').css('overflow','hidden');
-        $('.alert-rules').show().html(` <div class="red-bg">
+    function alertJD100() {
+        $('.jd-100').on('click', function () {
+            $('html').css('overflow','hidden');
+            $('.alert-rules').show().html(` <div class="red-bg">
             <img src="assets/close-alert@2x.png" class="close-alert"/>
             <img src="assets/close-alert-line@2x.png" class="close-line"/>
             <P class="gxl">恭喜您！</P>
@@ -58,16 +66,18 @@ $(document).ready(function () {
             <img src="assets/jd-gift-100@2x.png" class="jd-gift-100"/>
             <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.30rem;">(礼品在活动结束后，有客服联系统一发放，请保持电话畅通)</P>
         </div>`);
-        //点击去除弹框
-        $('.close-alert').on('click', function () {
-            $('body').css('overflow','scroll');
-            $('.alert-rules').hide();
+            //点击去除弹框
+            $('.close-alert').on('click', function () {
+                $('html').css('overflow','scroll');
+                $('.alert-rules').hide();
+            });
         });
-    });
+    };
     //点击弹出京东购物卡300
-    $('.jd-300').on('click', function () {
-        $('body').css('overflow','hidden');
-        $('.alert-rules').show().html(` <div class="red-bg">
+    function alertJD300() {
+        $('.jd-300').on('click', function () {
+            $('html').css('overflow','hidden');
+            $('.alert-rules').show().html(` <div class="red-bg">
             <img src="assets/close-alert@2x.png" class="close-alert"/>
             <img src="assets/close-alert-line@2x.png" class="close-line"/>
             <P class="gxl">恭喜您！</P>
@@ -75,18 +85,67 @@ $(document).ready(function () {
             <img src="assets/jd-gift-300@2x.png" class="jd-gift-100"/>
             <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.30rem;">(礼品在活动结束后，有客服联系统一发放，请保持电话畅通)</P>
         </div>`);
-        //点击去除弹框
-        $('.close-alert').on('click', function () {
-            $('body').css('overflow','scroll');
-            $('.alert-rules').hide();
+            //点击去除弹框
+            $('.close-alert').on('click', function () {
+                $('html').css('overflow','scroll');
+                $('.alert-rules').hide();
+            });
         });
-    });
+    }
+    //红包列表渲染
+    function redRender() {
+        //获取已完成任务
+        $.ajax({
+            url: baseUrl + 'guoqingHongbaoSign',
+            method: 'POST',
+            dataType: 'json',
+            data: {
+                token: window.sessionStorage.getItem('token'),
+            }
+        }).done((res)=>{
+            let redLi = $('.red-ul>li');
+            for(let i=0;i < res.data.hasUse;i++){
+                redLi.eq(i).css({
+                    'background':'url(assets/red-'+ (i+1) +'@2x.png) no-repeat center',
+                    'background-size': '1.08rem 1.02rem',
+                });
+                if(i<=2){
+                    $('.fl-tx').html(`已完成${res.data.hasUse}次任务，您再完成${3-res.data.hasUse}次获得神秘礼包`);
+                    if(i === 2){
+                        $('.jd-100').attr('src', 'assets/lw-light@2x.png');
+                        alertJD100();  //点击出100弹框
+                    }
+                }else if(i > 3 && i<=4){
+                    $('.fl-tx').html(`已完成${res.data.hasUse}次任务，您再完成${3-res.data.hasUse}次获得终极神秘礼包`);
+                }else{
+                    $('.fl-tx').html(`已完成6次任务，恭喜您获得终极大礼！`);
+                    $('.jd-300').attr('src', 'assets/lw-light@2x.png');
+                    alertJD300();  //点击出JD300弹框
+                }
+                $('.tz-logo').eq(i).show().attr('src','assets/touzi.png');
+            }
+            if(res.data.status === 1){
+                $('.red-btn').attr('src','assets/red-getted@2x.png');
+                window.sessionStorage.setItem('login','over');
+                redLi.eq(res.data.hasUse).css({
+                    'background':'url(assets/red-'+ (res.data.hasUse+1) +'@2x.png) no-repeat center',
+                    'background-size': '1.08rem 1.02rem',
+                });
+                $('.tz-logo').eq(res.data.hasUse).show();
+            }else{
+                $('.red-btn').attr('src','assets/red-going-get@2x.png');
+                window.sessionStorage.setItem('login','yes');
+            }
+        }).fail((error)=>{
+            console.log(error);
+        });
+    }
     //点击登录
     $('.red-btn').on('click', function () {
         if(window.sessionStorage.getItem('login') === 'yes'){   //领取红包
-            $('body').css('overflow','hidden');
+            $('html').css('overflow','hidden');
             $('.alert-rules').show().html(`  <div class="red-bg">
-                <img src="assets/close-alert@2x.png" class="close-alert"/>
+                <img src="assets/close-alert@2x.png" class="close-alert get-red-close"/>
                 <img src="assets/close-alert-line@2x.png" class="close-line"/>
                 <P class="gxl">恭喜您！</P>
                 <p>100元红包已发送至您的账户，请注意查收！</p>
@@ -94,21 +153,34 @@ $(document).ready(function () {
                 <img src="assets/red-100@2x.png" class="red-100-pic"/>
                 <P style="font-size: 0.18rem;transform: scale(0.9); transform-origin:0 0;width: 110%;">(领取成功可在我的账户-红包中查看)</P>
             </div>`);
+            //领取红包
+            $.ajax({
+                url: baseUrl + 'guoqingHongbao',
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    token: window.sessionStorage.getItem('token'),
+                }
+            }).done((res)=>{
+                redRender();  //红包列表刷新
+            }).fail((error)=>{
+                console.log(error);
+            });
             //点击去除弹框
-            $('.close-alert').on('click', function () {
-                $('body').css('overflow','scroll');
+            $('.get-red-close').on('click', function () {
+                $('html').css('overflow','scroll');
                 window.sessionStorage.setItem('login','over');
                 $('.red-btn').attr('src','assets/red-getted@2x.png');
                 $('.alert-rules').hide();
             });
         }else if(window.sessionStorage.getItem('login') === 'over'){   //去注册
-                alert('今日已领取，请明天再来哦！');
+            alert('今日已领取，请明天再来哦！');
+            // redRender();  //红包刷新
         }else{
             TanKuang.loginContainer = true;
             TanKuang.status = true;
-            $('.tan-kuang-bg').show();
+            $('.tan-kuang-bg').css('display','flex');
         }
-
     });
     let template = '';   //
     Vue.http.options.emulateJSON = true;
@@ -333,6 +405,10 @@ $(document).ready(function () {
                     switch (res.data.rcd){
                         case 'R0001':
                             alert('注册成功！');
+                            window.sessionStorage.setItem('token', res.data.token);
+                            window.sessionStorage.setItem('login', 'yes');
+                            redRender();
+                            this.closeLoginContainer();   //关闭弹框
                             break;
                         case 'M0008_2':
                             this.phoneDisplay = 'block';
@@ -402,6 +478,8 @@ $(document).ready(function () {
                             if(res.data.rcd ==='R0001'){
                                 $('.red-btn').attr('src','assets/red-going-get@2x.png');
                                 window.sessionStorage.setItem('login','yes');
+                                window.sessionStorage.setItem('token', res.data.token);
+                                redRender();   //红包列表刷新
                                 this.closeLoginContainer();
                             }else{
                                 console.log(res.data);
