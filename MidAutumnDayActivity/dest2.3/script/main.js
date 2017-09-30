@@ -1,10 +1,9 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-// import './lib/autoSetRem'
-
 $(document).ready(function () {
-    var baseUrl = 'https://test.qtz360.com/api1.1.0/rest/';
+    // let baseUrl = 'https://test.qtz360.com/api1.1.0/rest/'; //测试地址
+    var baseUrl = 'https://www.qtz360.com/apiactive/rest/'; //正式地址
     $('.tan-kuang-bg').css({
         'height': '100%',
         'position': 'fixed'
@@ -20,7 +19,7 @@ $(document).ready(function () {
     //投资规则点击弹出
     $('.touzi-rules').on('click', function () {
         $('html').css('overflow', 'hidden');
-        $('.alert-rules').show().html(' <div class="rules-bg">\n            <img src="assets/close-alert@2x.png" class="close-alert"/>\n            <img src="assets/close-alert-line@2x.png" class="close-line"/>\n            <P style="padding-top: 0.30rem">\u6D3B\u52A8\u8BF4\u660E:</P>\n            <P>1.\u7528\u6237\u70B9\u51FB\u9886\u53D6\u6309\u94AE\u5373\u53EF\u9886\u53D6100\u5143\u6295\u8D44\u7EA2\u5305\uFF0C\u6BCF\u65E5\u9650\u9886\u4E00\u6B21\u3002</P>\n            <P>2.\u6D3B\u52A8\u671F\u95F4\u7528\u6237\u5B8C\u6210\u4EFB\u610F3\u5929\u4EFB\u52A1\u5956\u52B1100\u5143\u4EAC\u4E1C\u8D2D\u7269\u5361\uFF0C\u7528\u6237\u5B8C\u6210\u4EFB\u610F6\u5929\u4EFB\u52A1\u5956\u52B1300\u5143\u4EAC\u4E1C\u8D2D\u7269\u5361\u3002</P>\n            <P>3.\u6BCF\u65E5\u9886\u53D6\u5E76\u4F7F\u7528\u5219\u7B97\u5B8C\u6210\u5F53\u65E5\u4EFB\u52A1\u3002</P>\n            <P>4.\u798F\u5229\u4E00\u4EC5\u9650\u9886\u53D6\u4E00\u6B21\u5956\u52B1\u3002</P>\n            <P>5.\u793C\u54C1\u5728\u6D3B\u52A8\u7ED3\u675F\u540E\uFF0C\u7531\u5BA2\u670D\u8054\u7CFB\u7EDF\u4E00\u53D1\u653E\uFF0C\u8BF7\u4FDD\u6301\u7535\u8BDD\u7545\u901A\u3002</P>\n            <P>6.\u5982\u6709\u7591\u95EE\u8BF7\u54A8\u8BE2\u5BA2\u670D\uFF1A</P>\n            <P>\u5BA2\u670D\u70ED\u7EBF\uFF1A4007-571-918  \u5BA2\u670DQQ:3378831238</P>\n        </div>');
+        $('.alert-rules').show().html(' <div class="rules-bg">\n            <img src="assets/close-alert@2x.png" class="close-alert"/>\n            <img src="assets/close-alert-line@2x.png" class="close-line"/>\n            <P style="padding-top: 0.30rem">\u6D3B\u52A8\u8BF4\u660E:</P>\n            <P>1.\u7528\u6237\u70B9\u51FB\u9886\u53D6\u6309\u94AE\u5373\u53EF\u9886\u53D6100\u5143\u6295\u8D44\u7EA2\u5305\uFF0C\u6BCF\u65E5\u9650\u9886\u4E00\u6B21\u3002</P>\n            <P>2.\u6D3B\u52A8\u671F\u95F4\u7528\u6237\u5B8C\u6210\u4EFB\u610F3\u5929\u4EFB\u52A1\u5956\u52B1100\u5143\u4EAC\u4E1C\u8D2D\u7269\u5361\uFF0C\u7528\u6237\u5B8C\u6210\u4EFB\u610F6\u5929\u4EFB\u52A1\u5956\u52B1300\u5143\u4EAC\u4E1C\u8D2D\u7269\u5361\u3002</P>\n            <P>3.\u6BCF\u65E5\u9886\u53D6\u5E76\u4F7F\u7528\u5219\u7B97\u5B8C\u6210\u5F53\u65E5\u4EFB\u52A1\u3002</P>\n            <P>4.\u798F\u5229\u4E00\u4E24\u9879\u5956\u52B1\u4EC5\u9650\u9886\u53D6\u4E00\u9879\u3002</P>\n            <P>5.\u793C\u54C1\u5728\u6D3B\u52A8\u7ED3\u675F\u540E\uFF0C\u7531\u5BA2\u670D\u8054\u7CFB\u7EDF\u4E00\u53D1\u653E\uFF0C\u8BF7\u4FDD\u6301\u7535\u8BDD\u7545\u901A\u3002</P>\n            <P>6.\u5982\u6709\u7591\u95EE\u8BF7\u54A8\u8BE2\u5BA2\u670D\uFF1A</P>\n            <P>\u5BA2\u670D\u70ED\u7EBF\uFF1A4007-571-918  \u5BA2\u670DQQ:3378831238</P>\n        </div>');
         //点击去除弹框
         $('.close-alert').on('click', function () {
             $('html').css('overflow', 'scroll');
@@ -49,7 +48,7 @@ $(document).ready(function () {
     function alertJD100() {
         $('.jd-100').on('click', function () {
             $('html').css('overflow', 'hidden');
-            $('.alert-rules').show().html(' <div class="red-bg">\n            <img src="assets/close-alert@2x.png" class="close-alert"/>\n            <img src="assets/close-alert-line@2x.png" class="close-line"/>\n            <P class="gxl">\u606D\u559C\u60A8\uFF01</P>\n            <p>\u606D\u559C\u83B7\u5F97100\u5143\u4EAC\u4E1C\u8D2D\u7269\u5361\uFF0C\u6D3B\u52A8\u7ED3\u675F\u540E\u540C\u610F\u53D1\u653E\u3002</p>\n            <img src="assets/jd-gift-100@2x.png" class="jd-gift-100"/>\n            <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.30rem;">(\u793C\u54C1\u5728\u6D3B\u52A8\u7ED3\u675F\u540E\uFF0C\u6709\u5BA2\u670D\u8054\u7CFB\u7EDF\u4E00\u53D1\u653E\uFF0C\u8BF7\u4FDD\u6301\u7535\u8BDD\u7545\u901A)</P>\n        </div>');
+            $('.alert-rules').show().html(' <div class="red-bg">\n            <img src="assets/close-alert@2x.png" class="close-alert"/>\n            <img src="assets/close-alert-line@2x.png" class="close-line"/>\n            <P class="gxl">\u606D\u559C\u60A8\uFF01</P>\n            <p>\u606D\u559C\u83B7\u5F97100\u5143\u4EAC\u4E1C\u8D2D\u7269\u5361\uFF0C\u6D3B\u52A8\u7ED3\u675F\u540E\u540C\u610F\u53D1\u653E\u3002</p>\n            <img src="assets/jd-gift-100@2x.png" class="jd-gift-100"/>\n            <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.25rem;">(\u793C\u54C1\u5728\u6D3B\u52A8\u7ED3\u675F\u540E\uFF0C\u6709\u5BA2\u670D\u8054\u7CFB\u7EDF\u4E00\u53D1\u653E\uFF0C\u8BF7\u4FDD\u6301\u7535\u8BDD\u7545\u901A)</P>\n        </div>');
             //点击去除弹框
             $('.close-alert').on('click', function () {
                 $('html').css('overflow', 'scroll');
@@ -61,7 +60,7 @@ $(document).ready(function () {
     function alertJD300() {
         $('.jd-300').on('click', function () {
             $('html').css('overflow', 'hidden');
-            $('.alert-rules').show().html(' <div class="red-bg">\n            <img src="assets/close-alert@2x.png" class="close-alert"/>\n            <img src="assets/close-alert-line@2x.png" class="close-line"/>\n            <P class="gxl">\u606D\u559C\u60A8\uFF01</P>\n            <p>\u606D\u559C\u83B7\u5F97300\u5143\u4EAC\u4E1C\u8D2D\u7269\u5361\uFF0C\u6D3B\u52A8\u7ED3\u675F\u540E\u540C\u610F\u53D1\u653E\u3002</p>\n            <img src="assets/jd-gift-300@2x.png" class="jd-gift-100"/>\n            <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.30rem;">(\u793C\u54C1\u5728\u6D3B\u52A8\u7ED3\u675F\u540E\uFF0C\u6709\u5BA2\u670D\u8054\u7CFB\u7EDF\u4E00\u53D1\u653E\uFF0C\u8BF7\u4FDD\u6301\u7535\u8BDD\u7545\u901A)</P>\n        </div>');
+            $('.alert-rules').show().html(' <div class="red-bg">\n            <img src="assets/close-alert@2x.png" class="close-alert"/>\n            <img src="assets/close-alert-line@2x.png" class="close-line"/>\n            <P class="gxl">\u606D\u559C\u60A8\uFF01</P>\n            <p>\u606D\u559C\u83B7\u5F97300\u5143\u4EAC\u4E1C\u8D2D\u7269\u5361\uFF0C\u6D3B\u52A8\u7ED3\u675F\u540E\u540C\u610F\u53D1\u653E\u3002</p>\n            <img src="assets/jd-gift-300@2x.png" class="jd-gift-100"/>\n            <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.25rem;">(\u793C\u54C1\u5728\u6D3B\u52A8\u7ED3\u675F\u540E\uFF0C\u6709\u5BA2\u670D\u8054\u7CFB\u7EDF\u4E00\u53D1\u653E\uFF0C\u8BF7\u4FDD\u6301\u7535\u8BDD\u7545\u901A)</P>\n        </div>');
             //点击去除弹框
             $('.close-alert').on('click', function () {
                 $('html').css('overflow', 'scroll');
@@ -86,29 +85,42 @@ $(document).ready(function () {
                     'background': 'url(assets/red-' + (i + 1) + '@2x.png) no-repeat center',
                     'background-size': '1.08rem 1.02rem'
                 });
-                if (i <= 2) {
-                    $('.fl-tx').html('\u5DF2\u5B8C\u6210' + res.data.hasUse + '\u6B21\u4EFB\u52A1\uFF0C\u60A8\u518D\u5B8C\u6210' + (3 - res.data.hasUse) + '\u6B21\u83B7\u5F97\u795E\u79D8\u793C\u5305');
-                    if (i === 2) {
-                        $('.jd-100').attr('src', 'assets/lw-light@2x.png');
-                        alertJD100(); //点击出100弹框
-                    }
-                } else if (i > 3 && i <= 4) {
-                    $('.fl-tx').html('\u5DF2\u5B8C\u6210' + res.data.hasUse + '\u6B21\u4EFB\u52A1\uFF0C\u60A8\u518D\u5B8C\u6210' + (3 - res.data.hasUse) + '\u6B21\u83B7\u5F97\u7EC8\u6781\u795E\u79D8\u793C\u5305');
-                } else {
-                    $('.fl-tx').html('\u5DF2\u5B8C\u62106\u6B21\u4EFB\u52A1\uFF0C\u606D\u559C\u60A8\u83B7\u5F97\u7EC8\u6781\u5927\u793C\uFF01');
-                    $('.jd-300').attr('src', 'assets/lw-light@2x.png');
-                    alertJD300(); //点击出JD300弹框
-                }
                 $('.tz-logo').eq(i).show().attr('src', 'assets/touzi.png');
+            }
+            if (res.data.hasUse <= 3) {
+                $('.fl-tx').html('\u5DF2\u5B8C\u6210' + res.data.hasUse + '\u6B21\u4EFB\u52A1\uFF0C\u60A8\u518D\u5B8C\u6210' + (3 - res.data.hasUse) + '\u6B21\u83B7\u5F97\u795E\u79D8\u793C\u5305');
+                if (res.data.hasUse === 3) {
+                    $('.jd-100').attr('src', 'assets/lw-light@2x.png');
+                    $('.fl-tx').html('\u5DF2\u5B8C\u6210' + res.data.hasUse + '\u6B21\u4EFB\u52A1\uFF0C\u60A8\u518D\u5B8C\u6210' + 3 + '\u6B21\u83B7\u5F97\u7EC8\u6781\u795E\u79D8\u793C\u5305');
+                    alertJD100(); //点击出100弹框
+                }
+            } else if (res.data.hasUse > 3 && res.data.hasUse <= 5) {
+                $('.jd-100').attr('src', 'assets/lw-light@2x.png');
+                alertJD100(); //点击出100弹框
+                $('.fl-tx').html('\u5DF2\u5B8C\u6210' + res.data.hasUse + '\u6B21\u4EFB\u52A1\uFF0C\u60A8\u518D\u5B8C\u6210' + (6 - res.data.hasUse) + '\u6B21\u83B7\u5F97\u7EC8\u6781\u795E\u79D8\u793C\u5305');
+            } else {
+                $('.jd-100').attr('src', 'assets/lw-light@2x.png');
+                alertJD100(); //点击出100弹框
+                $('.fl-tx').html('\u5DF2\u5B8C\u62106\u6B21\u4EFB\u52A1\uFF0C\u606D\u559C\u60A8\u83B7\u5F97\u7EC8\u6781\u5927\u793C\uFF01');
+                $('.jd-300').attr('src', 'assets/lw-light@2x.png');
+                alertJD300(); //点击出JD300弹框
             }
             if (res.data.status === 1) {
                 $('.red-btn').attr('src', 'assets/red-getted@2x.png');
                 window.sessionStorage.setItem('login', 'over');
-                redLi.eq(res.data.hasUse).css({
-                    'background': 'url(assets/red-' + (res.data.hasUse + 1) + '@2x.png) no-repeat center',
-                    'background-size': '1.08rem 1.02rem'
-                });
-                $('.tz-logo').eq(res.data.hasUse).show();
+                if (res.data.todayStatus === 0) {
+                    redLi.eq(res.data.hasUse).css({
+                        'background': 'url(assets/red-' + (res.data.hasUse + 1) + '@2x.png) no-repeat center',
+                        'background-size': '1.08rem 1.02rem'
+                    });
+                    $('.tz-logo').eq(res.data.hasUse).show();
+                } else {
+                    redLi.eq(res.data.hasUse > 0 ? res.data.hasUse - 1 : 0).css({
+                        'background': 'url(assets/red-' + ((res.data.hasUse > 0 ? res.data.hasUse - 1 : 0) + 1) + '@2x.png) no-repeat center',
+                        'background-size': '1.08rem 1.02rem'
+                    });
+                    $('.tz-logo').eq(res.data.hasUse > 0 ? res.data.hasUse - 1 : 0).show();
+                }
             } else {
                 $('.red-btn').attr('src', 'assets/red-going-get@2x.png');
                 window.sessionStorage.setItem('login', 'yes');
@@ -179,7 +191,8 @@ $(document).ready(function () {
             clickColor: '#ffffff', //点击按钮的颜色,
             // baseUrl: 'https://www.qtz360.com/api2.2.2/rest/',   //正式url2.2根路径
             // baseUrl: 'https://www.qtz360.com/api2.2.3/rest/',   //正式url2.3根路径
-            baseUrl: 'https://test.qtz360.com/api1.1.0/rest/', //url测试
+            // baseUrl: 'https://test.qtz360.com/api1.1.0/rest/',  //url测试
+            baseUrl: 'https://www.qtz360.com/apiactive/rest/', //url测试
             phoneDisplay: 'none',
             checkDisplay: 'none',
             sn: 8932543, //ETC渠道码
@@ -458,7 +471,7 @@ $(document).ready(function () {
                         var _this8 = this;
 
                         if (res.data.rcd === 'R0001') {
-                            $('.red-btn').attr('src', 'assets/red-going-get@2x.png');
+                            alert('登录成功！');
                             window.sessionStorage.setItem('login', 'yes');
                             window.sessionStorage.setItem('token', res.data.token);
                             redRender(); //红包列表刷新

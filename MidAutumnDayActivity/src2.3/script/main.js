@@ -1,7 +1,6 @@
-// import './lib/autoSetRem'
-
 $(document).ready(function () {
-    let baseUrl = 'https://test.qtz360.com/api1.1.0/rest/';
+    // let baseUrl = 'https://test.qtz360.com/api1.1.0/rest/'; //测试地址
+    let baseUrl = 'https://www.qtz360.com/apiactive/rest/';   //正式地址
     $('.tan-kuang-bg').css({
         'height':'100%',
         'position':'fixed',
@@ -13,7 +12,6 @@ $(document).ready(function () {
         redRender();
     }else{
         $('.red-btn').attr('src','assets/red-login@2x.png');
-
     }
     //投资规则点击弹出
     $('.touzi-rules').on('click', function () {
@@ -25,7 +23,7 @@ $(document).ready(function () {
             <P>1.用户点击领取按钮即可领取100元投资红包，每日限领一次。</P>
             <P>2.活动期间用户完成任意3天任务奖励100元京东购物卡，用户完成任意6天任务奖励300元京东购物卡。</P>
             <P>3.每日领取并使用则算完成当日任务。</P>
-            <P>4.福利一仅限领取一次奖励。</P>
+            <P>4.福利一两项奖励仅限领取一项。</P>
             <P>5.礼品在活动结束后，由客服联系统一发放，请保持电话畅通。</P>
             <P>6.如有疑问请咨询客服：</P>
             <P>客服热线：4007-571-918  客服QQ:3378831238</P>
@@ -64,7 +62,7 @@ $(document).ready(function () {
             <P class="gxl">恭喜您！</P>
             <p>恭喜获得100元京东购物卡，活动结束后同意发放。</p>
             <img src="assets/jd-gift-100@2x.png" class="jd-gift-100"/>
-            <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.30rem;">(礼品在活动结束后，有客服联系统一发放，请保持电话畅通)</P>
+            <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.25rem;">(礼品在活动结束后，有客服联系统一发放，请保持电话畅通)</P>
         </div>`);
             //点击去除弹框
             $('.close-alert').on('click', function () {
@@ -83,7 +81,7 @@ $(document).ready(function () {
             <P class="gxl">恭喜您！</P>
             <p>恭喜获得300元京东购物卡，活动结束后同意发放。</p>
             <img src="assets/jd-gift-300@2x.png" class="jd-gift-100"/>
-            <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.30rem;">(礼品在活动结束后，有客服联系统一发放，请保持电话畅通)</P>
+            <P style="transform: scale(0.9); transform-origin:0 0;width: 110%;padding-top:0.25rem;">(礼品在活动结束后，有客服联系统一发放，请保持电话畅通)</P>
         </div>`);
             //点击去除弹框
             $('.close-alert').on('click', function () {
@@ -109,29 +107,42 @@ $(document).ready(function () {
                     'background':'url(assets/red-'+ (i+1) +'@2x.png) no-repeat center',
                     'background-size': '1.08rem 1.02rem',
                 });
-                if(i<=2){
-                    $('.fl-tx').html(`已完成${res.data.hasUse}次任务，您再完成${3-res.data.hasUse}次获得神秘礼包`);
-                    if(i === 2){
-                        $('.jd-100').attr('src', 'assets/lw-light@2x.png');
-                        alertJD100();  //点击出100弹框
-                    }
-                }else if(i > 3 && i<=4){
-                    $('.fl-tx').html(`已完成${res.data.hasUse}次任务，您再完成${3-res.data.hasUse}次获得终极神秘礼包`);
-                }else{
-                    $('.fl-tx').html(`已完成6次任务，恭喜您获得终极大礼！`);
-                    $('.jd-300').attr('src', 'assets/lw-light@2x.png');
-                    alertJD300();  //点击出JD300弹框
-                }
                 $('.tz-logo').eq(i).show().attr('src','assets/touzi.png');
+            }
+            if(res.data.hasUse<=3){
+                $('.fl-tx').html(`已完成${res.data.hasUse}次任务，您再完成${3-res.data.hasUse}次获得神秘礼包`);
+                if(res.data.hasUse === 3){
+                    $('.jd-100').attr('src', 'assets/lw-light@2x.png');
+                    $('.fl-tx').html(`已完成${res.data.hasUse}次任务，您再完成${3}次获得终极神秘礼包`);
+                    alertJD100();  //点击出100弹框
+                }
+            }else if(res.data.hasUse > 3 && res.data.hasUse <=5){
+                $('.jd-100').attr('src', 'assets/lw-light@2x.png');
+                alertJD100();  //点击出100弹框
+                $('.fl-tx').html(`已完成${res.data.hasUse}次任务，您再完成${6-res.data.hasUse}次获得终极神秘礼包`);
+            }else{
+                $('.jd-100').attr('src', 'assets/lw-light@2x.png');
+                alertJD100();  //点击出100弹框
+                $('.fl-tx').html(`已完成6次任务，恭喜您获得终极大礼！`);
+                $('.jd-300').attr('src', 'assets/lw-light@2x.png');
+                alertJD300();  //点击出JD300弹框
             }
             if(res.data.status === 1){
                 $('.red-btn').attr('src','assets/red-getted@2x.png');
                 window.sessionStorage.setItem('login','over');
-                redLi.eq(res.data.hasUse).css({
-                    'background':'url(assets/red-'+ (res.data.hasUse+1) +'@2x.png) no-repeat center',
-                    'background-size': '1.08rem 1.02rem',
-                });
-                $('.tz-logo').eq(res.data.hasUse).show();
+                if(res.data.todayStatus === 0){
+                    redLi.eq(res.data.hasUse).css({
+                        'background':'url(assets/red-'+ (res.data.hasUse+1) +'@2x.png) no-repeat center',
+                        'background-size': '1.08rem 1.02rem',
+                    });
+                    $('.tz-logo').eq(res.data.hasUse).show();
+                }else{
+                    redLi.eq((res.data.hasUse>0)?res.data.hasUse-1:0).css({
+                        'background':'url(assets/red-'+ (((res.data.hasUse>0)?res.data.hasUse-1:0)+1) +'@2x.png) no-repeat center',
+                        'background-size': '1.08rem 1.02rem',
+                    });
+                    $('.tz-logo').eq((res.data.hasUse>0)?res.data.hasUse-1:0).show();
+                }
             }else{
                 $('.red-btn').attr('src','assets/red-going-get@2x.png');
                 window.sessionStorage.setItem('login','yes');
@@ -208,7 +219,8 @@ $(document).ready(function () {
             clickColor: '#ffffff',   //点击按钮的颜色,
             // baseUrl: 'https://www.qtz360.com/api2.2.2/rest/',   //正式url2.2根路径
             // baseUrl: 'https://www.qtz360.com/api2.2.3/rest/',   //正式url2.3根路径
-            baseUrl: 'https://test.qtz360.com/api1.1.0/rest/',  //url测试
+            // baseUrl: 'https://test.qtz360.com/api1.1.0/rest/',  //url测试
+            baseUrl: 'https://www.qtz360.com/apiactive/rest/',  //url测试
             phoneDisplay: 'none',
             checkDisplay: 'none',
             sn: 8932543,  //ETC渠道码
@@ -476,7 +488,7 @@ $(document).ready(function () {
                     })
                         .then(function (res) {
                             if(res.data.rcd ==='R0001'){
-                                $('.red-btn').attr('src','assets/red-going-get@2x.png');
+                                alert('登录成功！');
                                 window.sessionStorage.setItem('login','yes');
                                 window.sessionStorage.setItem('token', res.data.token);
                                 redRender();   //红包列表刷新
